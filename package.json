@@ -1,0 +1,18 @@
+{
+  "name": "odnovino",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "compile:sass": "sass sass/main.scss css/style.css -w",
+    "dev": "concurrently \"npm run compile:sass\" \"live-server\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "live-server": "^1.2.2",
+    "sass": "^1.59.2"
+  }
+}
