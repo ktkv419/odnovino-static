@@ -1,0 +1,91 @@
+.menu {
+  grid-column: full-start / full-end;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+  }
+
+  &__slider {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    position: relative;
+  }
+
+  margin-bottom: 100rem;
+}
+
+.slide {
+  width: 70vw;
+  height: 80vh;
+
+  opacity: 0;
+
+  position: absolute;
+
+  z-index: -9999;
+
+  // transition: transform 1s, opacity 1s;
+
+  transform: translateX(0%) scale(0.6);
+  transition: transform 1s ease, opacity 1s ease 0.2s;
+
+  &.prev {
+    transform: translateX(-80%) scale(0.8);
+    opacity: 1;
+    z-index: 1;
+  }
+
+  &.curr {
+    transform: translateX(0%) scale(1);
+    opacity: 1;
+    z-index: 2;
+  }
+
+  &.next {
+    transform: translateX(80%) scale(0.8);
+    opacity: 1;
+    z-index: 1;
+  }
+
+  &.hot {
+    background-color: red;
+  }
+
+  &.hot-drinks {
+    background-color: violet;
+  }
+
+  &.cold {
+    background-color: blue;
+  }
+
+  &.drinks {
+    background-color: yellow;
+  }
+}
+
+.item {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1fr;
+
+  &__title {
+    grid-column: 2/3;
+  }
+
+  &__price {
+    grid-column: 3/4;
+    justify-self: end;
+  }
+}

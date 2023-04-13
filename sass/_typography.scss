@@ -1,59 +1,62 @@
 a,
 a:visited,
 a:active {
-    text-decoration: none;
-    color: currentColor
+  text-decoration: none;
+  color: currentColor;
 }
 
 ul,
 ol {
-    list-style: none;
+  list-style: none;
 }
 
 body {
-    font-family: $default-font
+  font-family: $default-font;
 }
 
 .heading-primary {
-    color: azure;
-    text-transform: uppercase;
+  color: azure;
+  text-transform: uppercase;
 
-    &--main {
-        font-size: 7rem;
-        font-family: $fancy-font;
-        letter-spacing: 1rem;
+  &--main {
+    font-size: 7rem;
+    font-family: $fancy-font;
+    letter-spacing: 1rem;
+  }
 
+  &--sub {
+    font-size: 2rem;
+    letter-spacing: 1.1rem;
+  }
+
+  &--add {
+    font-size: 2rem;
+
+    &:hover {
+      color: black;
+
+      &::after {
+        height: 100%;
+      }
     }
-
-    &--sub {
-        font-size: 2rem;
-        letter-spacing: 1.1rem;
-    }
-
-    &--add {
-        font-size: 2rem;
-
-
-        &:hover {
-            color: black;
-
-            &::after {
-                height: 100%;
-            }
-        }
-    }
-
+  }
 }
 
 .nav {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .motto {
-    &__text {
-        color: var(--color-white);
-        font-weight: 700;
-        font-size: 2rem;
-        text-align: center;
-    }
+  &__text {
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+.menu {
+  &__title {
+    color: var(--color-white);
+  }
 }

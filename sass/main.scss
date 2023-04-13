@@ -1,8 +1,9 @@
 @import 'variables';
 @import 'base';
-@import 'header';
-
-@import 'navigation';
 @import 'typography';
+
+// Components
+@import 'components/header';
+@import 'components/menu';
+@import 'components/navigation';
 @import 'components/motto';
-@import 'menu';

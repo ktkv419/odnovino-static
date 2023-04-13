@@ -1,0 +1,52 @@
+.nav {
+  position: fixed;
+  left: 0;
+
+  z-index: 9999;
+
+  color: white;
+
+  width: 100%;
+
+  // background-color: black;
+
+  //////////////////////////////////////
+  // height: 7rem;
+  background-color: transparent;
+  backdrop-filter: blur(5px) brightness(60%);
+  //////////////////////////////////
+
+  display: grid;
+  grid-template-columns: [full-start] 1fr [center-start] 77vw [center-end] 1fr [full-end];
+
+  transition: transform 0.5s;
+  transform: translateY(0%);
+
+  &.hidden {
+    transform: translateY(-110%);
+  }
+
+  &__logo-box {
+    grid-column: center-start / center-end;
+    grid-row: 1/2;
+
+    justify-self: start;
+  }
+
+  &__btn-box {
+    grid-column: center-start / center-end;
+    grid-row: 1/2;
+
+    justify-self: end;
+  }
+
+  &__btn__list {
+    width: 40vw;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    display: inline-block;
+  }
+}
