@@ -1,0 +1,41 @@
+.menu {
+  background-color: aqua;
+  height: 100vh;
+  grid-column: center-start/center-end;
+
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+
+  &__title {
+    margin-bottom: 10rem;
+
+  }
+
+  &__items {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 3rem;
+  }
+
+
+
+}
+
+.item {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1fr;
+
+  &__title {
+    grid-column: 2/3;
+
+  }
+
+  &__price {
+    grid-column: 3/4;
+    justify-self: end;
+  }
+}

@@ -1,0 +1,25 @@
+.motto {
+  grid-column: center-start / center-end;
+
+  padding: 10rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &::before,
+  &::after {
+    content: '';
+    position: relative;
+
+    background-color: var(--color-white);
+    width: 60vw;
+    height: 1px;
+  }
+
+  &__text {
+    width: 50vw;
+    padding: 2rem 0;
+  }
+}

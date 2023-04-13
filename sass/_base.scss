@@ -13,4 +13,16 @@ html {
 
 body {
   line-height: 1.6;
+  background-color: var(--color-black);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: [full-start] 1fr [center-start] 77vw [center-end] 1fr [full-end];
+  grid-template-rows: 100vh;
+
+}
+
+.nav {
+  height: 5vh;
 }
