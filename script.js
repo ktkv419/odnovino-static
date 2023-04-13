@@ -22,6 +22,11 @@ console.log(slides)
 let currentSlide = 1
 
 const changeSlide = ({ target }) => {
+  slider.removeEventListener('click', changeSlide)
+  setTimeout(() => {
+    slider.addEventListener('click', changeSlide)
+  }, 1000)
+
   const slide = target.closest('.slide')
   if (slide.classList.contains('prev'))
     currentSlide =
