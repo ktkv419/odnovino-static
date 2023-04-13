@@ -17,17 +17,17 @@ window.addEventListener('scroll', menuHide)
 
 const slider = document.querySelector('.menu__slider')
 const slides = document.querySelectorAll('.slide')
-console.log(slides)
 
 let currentSlide = 1
-
 const changeSlide = ({ target }) => {
+  const slide = target.closest('.slide')
+  if (!slide || slide.classList.contains('curr')) return
+
   slider.removeEventListener('click', changeSlide)
   setTimeout(() => {
     slider.addEventListener('click', changeSlide)
   }, 1000)
 
-  const slide = target.closest('.slide')
   if (slide.classList.contains('prev'))
     currentSlide =
       currentSlide - 1 > -1
@@ -55,10 +55,12 @@ const changeSlide = ({ target }) => {
   //     console.log('test')
   //   }
   // }
+
   const nextSlide = currentSlide + 1 < slides.length ? currentSlide + 1 : 0
   const prevSlide = currentSlide - 1 > -1 ? currentSlide - 1 : slides.length - 1
-  console.log(prevSlide + 'current' + currentSlide, nextSlide)
+
   slides.forEach((el) => el.classList.remove('prev', 'next', 'curr'))
+
   slides[prevSlide].classList.add('prev')
   slides[nextSlide].classList.add('next')
   slide.classList.add('curr')
