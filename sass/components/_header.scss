@@ -9,10 +9,10 @@
   &__bg {
     grid-column: full-start / full-end;
     grid-row: 1/2;
-    background-image: url('../img/label.jpg');
+    background-image: url('../img/preview.jpg');
     background-size: cover;
     background-position: center center; //картинка обрезается с двух сторон
-    filter: brightness(70%);
+    filter: brightness(40%);
     z-index: -99;
   }
 

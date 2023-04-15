@@ -13,10 +13,11 @@ html {
 
 body {
   line-height: 1.6;
-  background-color: var(--color-black);
+  background-color: var(--color-white);
 
   overflow-y: auto;
-  perspective: 2px; /* <-- This line */
+  perspective: 2px;
+  /* <-- This line */
 }
 
 .container {

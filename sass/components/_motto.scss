@@ -8,14 +8,12 @@
   align-items: center;
   justify-content: center;
 
-  background-color: var(--color-black);
-
   &::before,
   &::after {
     content: '';
     position: relative;
 
-    background-color: var(--color-white);
+    background-color: var(--color-black);
     width: 60vw;
     height: 1px;
   }
