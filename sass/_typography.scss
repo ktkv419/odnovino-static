@@ -12,9 +12,8 @@ ol {
 
 body {
   font-family: $default-font;
-  color: var(--color-black)
+  color: var(--color-black);
 }
-
 
 .heading-primary {
   color: var(--color-white);
@@ -60,7 +59,8 @@ body {
   background-color: var(--color-black);
   color: var(--color-white);
 
-  &__title {}
+  &__title {
+  }
 
   .slide {
     // color: var(--color-white);
@@ -70,15 +70,11 @@ body {
     }
 
     &__content {
-
-
       &__title {
         font-size: 4rem;
         font-weight: 400;
         justify-self: center;
         font-family: $fancy-font;
-
-
       }
 
       &__list {
@@ -90,12 +86,18 @@ body {
             width: 100%;
             border-bottom: dotted 2px;
             transform: translateY(-5px);
-
-
           }
         }
       }
-
     }
   }
+}
+
+.about {
+  &__title {
+    font-size: 4rem;
+  }
+  font-size: 1.8rem;
+  // line-height: normal;
+  text-align: justify;
 }

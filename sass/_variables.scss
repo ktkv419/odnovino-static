@@ -1,13 +1,14 @@
 :root {
+  ///////// LEGACY
   // --color-black: #0d0000;
   // --color-white: #f3e1d5;
+
   --color-black: #0f0f0f;
-  --color-white: #ffece0;
+  // --color-white: #ffece0;
+  --color-white: #fff6f1;
   --color-accent: #570f1b;
 }
 
-$default-font: Montserrat,
-  sans-serif;
+$default-font: Montserrat, sans-serif;
 
-$fancy-font: Pacifico,
-  cursive;
+$fancy-font: Pacifico, cursive;
