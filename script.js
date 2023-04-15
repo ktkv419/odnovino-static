@@ -8,24 +8,49 @@ const menuHide = () => {
   } else {
     nav.classList.remove('hidden')
   }
-  console.log(scrollHeight)
   lastScroll = scrollHeight
 }
 
 window.addEventListener('scroll', menuHide)
-// window.addEventListener('load', adjustBgOpacity)
+
+////////////////////////////////////// EXPERIMENTAL
+// const body = document.body,
+//   html = document.documentElement
+
+// const height = Math.max(
+//   body.scrollHeight,
+//   body.offsetHeight,
+//   html.clientHeight,
+//   html.scrollHeight,
+//   html.offsetHeight
+// )
+
+// const viewheight = window.innerHeight
+// const wine = document.querySelector('.wine-level')
+// const wineSensitivity = 100
+
+// const wineScroll = () => {
+//   console.log(window.scrollY)
+//   wine.style.left = `-${(window.scrollY / height) * wineSensitivity}%`
+// }
+
+// window.addEventListener('scroll', wine)
+//////////////////////////////////////////////////////////////
 
 const slider = document.querySelector('.menu__slider')
 const slides = document.querySelectorAll('.slide')
 
 let currentSlide = 1
 const changeSlide = ({ target }) => {
-  const slide = target.closest('.slide')
+  const slide = target.classList.contains('.slide')
+    ? target
+    : target.closest('.slide')
   if (!slide || slide.classList.contains('curr')) return
 
   slider.removeEventListener('click', changeSlide)
   setTimeout(() => {
     slider.addEventListener('click', changeSlide)
+    swipeAnimationRunning = false
   }, 1000)
 
   if (slide.classList.contains('prev'))
@@ -67,3 +92,51 @@ const changeSlide = ({ target }) => {
 }
 
 slider.addEventListener('click', changeSlide)
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+const menu = document.querySelector('.menu')
+let swipeAnimationRunning = false
+
+let touchstartX = 0
+let touchendX = 0
+
+const swipeMenu = (swipeSlide) => {
+  changeSlide({ target: swipeSlide })
+}
+
+function checkDirection() {
+  if (swipeAnimationRunning) return
+  swipeAnimationRunning = true
+
+  let swipeSlide
+  if (touchendX < touchstartX) {
+    swipeSlide = document.querySelector('.slide.next')
+  } else if (touchendX > touchstartX) {
+    swipeSlide = document.querySelector('.slide.prev')
+  }
+  console.log(swipeSlide)
+  swipeMenu(swipeSlide)
+}
+
+document.body.addEventListener('touchstart', function () {})
+
+document.querySelector('.menu__slider').addEventListener('touchstart', (e) => {
+  touchstartX = e.changedTouches[0].screenX
+})
+
+document.querySelector('.menu__slider').addEventListener('touchend', (e) => {
+  touchendX = e.changedTouches[0].screenX
+  if (
+    Math.abs(touchstartX) - Math.abs(touchendX) > 100 ||
+    Math.abs(touchendX) - Math.abs(touchstartX) > 100
+  )
+    checkDirection()
+})
+// window.addEventListener('scroll', () => {
+
+// })
+
+// window.addEventListener('scroll', () => {
+
+// })

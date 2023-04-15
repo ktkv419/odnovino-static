@@ -6,9 +6,17 @@
   box-sizing: inherit;
 }
 
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-black);
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 1rem = 10px
+  @media (max-width: 75em) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -17,13 +25,13 @@ body {
 }
 
 .container {
+  overflow-x: hidden;
   display: grid;
   grid-template-columns: [full-start] 1fr [center-start] 77vw [center-end] 1fr [full-end];
-  grid-template-rows: 100vh;
+  position: relative;
+  z-index: 0;
 }
 
 .nav {
   height: 5vh;
 }
-
-/////////////////// PARALAXXXXXXXXXXXXXXXXXXXXXX

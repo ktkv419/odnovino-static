@@ -7,13 +7,16 @@
 
   &__box {
     display: grid;
-    grid-template-columns: repeat(3, 33.33333333333%);
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+
+    @media (max-width: 56.25em) {
+      grid-template-columns: 1fr;
+    }
 
     .card {
       background-color: aquamarine;
-
     }
   }
-
 }

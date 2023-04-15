@@ -6,7 +6,8 @@
   align-items: center;
   justify-content: center;
 
-  &__title {}
+  &__title {
+  }
 
   &__slider {
     height: 100vh;
@@ -25,6 +26,9 @@
 .slide {
   width: 70vw;
   height: 80vh;
+  @media (max-width: 56.25em) {
+    width: 90vw;
+  }
 
   opacity: 0;
 
@@ -71,8 +75,7 @@
   }
 
   transform: translateX(0%) scale(0.6);
-  transition: transform 1s ease,
-  opacity 1s ease 0.2s;
+  transition: transform 1s ease, opacity 1s ease 0.2s;
 
   &.prev {
     transform: translateX(-80%) scale(0.8);
@@ -93,9 +96,8 @@
   }
 
   &.hot {
-
     .slide__bg {
-      background: url("../img/hot.JPG");
+      background: url('../img/hot.JPG');
       background-position: 50% 25%;
     }
   }
