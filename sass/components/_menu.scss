@@ -15,7 +15,7 @@
     justify-content: center;
     align-items: center;
 
-    overflow: hidden;
+    overflow-x: hidden;
 
     position: relative;
   }
@@ -24,6 +24,7 @@
 .slide {
   width: 70vw;
   min-height: 80vh;
+
   @media (max-width: 56.25em) {
     min-height: 90vh;
     width: 90vw;
@@ -32,15 +33,9 @@
   opacity: 0;
 
   transform: translateX(0%) scale(0.6);
-  transition: transform 1s ease, opacity 1s ease 0.2s;
+  transition: transform 0.8s ease, opacity 0.8s ease 0.2s;
 
   position: absolute;
-
-  z-index: -9999;
-
-  // border-radius: 4rem;
-
-  overflow: hidden;
 
   &__content {
     position: relative;
@@ -92,23 +87,29 @@
 
   &.prev {
     transform: translateX(-80%) scale(0.8);
-    opacity: 1;
-    z-index: 1;
-    cursor: pointer;
-    filter: blur(1px);
+    z-index: 2;
   }
 
   &.curr {
     transform: translateX(0%) scale(1);
-    opacity: 1;
-    z-index: 2;
+    z-index: 3;
     box-shadow: 0 1rem 4rem rgba($color: #000, $alpha: 1);
   }
 
   &.next {
     transform: translateX(80%) scale(0.8);
-    opacity: 1;
     z-index: 1;
+  }
+
+  &.prev,
+  &.curr,
+  &.next {
+    transition: transform 0.8s ease, opacity 0.8s ease 0.2s;
+    opacity: 1;
+  }
+
+  &.prev,
+  &.next {
     cursor: pointer;
     filter: blur(1px);
   }

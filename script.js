@@ -64,7 +64,7 @@ const foodNames = {
     setTimeout(() => {
       slider.addEventListener('click', changeSlide)
       swipeAnimationRunning = false
-    }, 1000)
+    }, 800)
 
     if (slide.classList.contains('prev'))
       currentSlide =

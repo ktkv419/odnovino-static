@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 80vh;
   padding-top: 10rem;
 
   &__title {
@@ -14,27 +13,108 @@
       background-image: url('../img/misc/tasting.png');
       background-repeat: no-repeat;
       background-size: contain;
-      top: -150%;
-      right: -45%;
+      top: -50%;
+      right: -35%;
       width: 25rem;
       height: 25rem;
     }
   }
 
   &__box {
+    height: 80vh;
     margin-top: 4rem;
     display: grid;
     width: 100%;
-    height: 100%;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 
     @media (max-width: 56.25em) {
       grid-template-columns: 1fr;
     }
+  }
+}
 
-    .card {
-      background-color: #333;
-    }
+.card {
+  perspective: 80rem;
+  -moz-perspective: 80rem;
+  transform-style: preserve-3d;
+  transition: all 0.5s;
+  position: relative;
+
+  z-index: 2;
+  @media (max-width: 56.25em) {
+    min-height: 60vh;
+  }
+
+  &__title {
+    position: absolute;
+    top: 4rem;
+  }
+
+  &__theme {
+    transform: translateZ(5rem);
+    width: 80%;
+  }
+
+  &__time {
+    position: absolute;
+    bottom: 4rem;
+  }
+
+  &--front,
+  &--back {
+    perspective: 50rem;
+    -moz-perspective: 50rem;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: all 0.8s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--front {
+    transform: rotateY(0deg) scale(0.9);
+  }
+  &--back {
+    transform: rotateY(-180deg) scale(0.9);
+    padding: 2rem;
+  }
+
+  &:hover &--front {
+    transform: rotateY(180deg) scale(1.1);
+  }
+
+  &:hover &--back {
+    transform: rotateY(0deg) scale(1.1);
+  }
+}
+
+.tasting {
+  .card--front {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url('../../img/events/tasting.jpg');
+    background-size: cover;
+  }
+}
+
+.private-tasting {
+  .card--front {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url('../../img/events/private-tasting.jpg');
+    background-size: cover;
+  }
+}
+
+.casino {
+  .card--front {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url('../../img/events/casino.jpg');
+    background-size: cover;
   }
 }

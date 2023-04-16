@@ -10,6 +10,15 @@ ol {
   list-style: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
 body {
   font-family: $default-font;
   color: var(--color-black);
@@ -20,14 +29,14 @@ body {
   text-transform: uppercase;
 
   &--main {
-    font-size: 7rem;
+    font-size: 10rem;
     font-family: $fancy-font;
     letter-spacing: 1rem;
   }
 
   &--sub {
     font-size: 2rem;
-    letter-spacing: 1.1rem;
+    letter-spacing: 2rem;
   }
 
   &--add {
@@ -48,11 +57,23 @@ body {
 }
 
 .motto {
+  background-color: var(--color-white);
   &__text {
-    font-weight: 700;
-    font-size: 2rem;
+    font-family: $fancy-font;
+    font-size: 5rem;
     text-align: center;
   }
+}
+
+.about {
+  background-color: var(--color-white);
+  &__title {
+    font-size: 6rem;
+    font-weight: bold;
+  }
+  font-size: 2rem;
+  // line-height: normal;
+  text-align: justify;
 }
 
 .menu {
@@ -60,16 +81,17 @@ body {
   color: var(--color-white);
 
   &__title {
-    font-size: 5rem;
+    font-size: 6rem;
+    font-weight: bold;
   }
 
   .slide {
     &__content {
       &__title {
         font-size: 4rem;
-        font-weight: 400;
         justify-self: center;
         font-family: $fancy-font;
+        line-height: 1;
       }
 
       &__list {
@@ -92,18 +114,72 @@ body {
   }
 }
 
-.about {
-  &__title {
-    font-size: 4rem;
-  }
-  font-size: 1.8rem;
-  // line-height: normal;
-  text-align: justify;
-}
-
 .events {
+  background-color: var(--color-white);
   &__title {
-    font-size: 4rem;
+    font-size: 6rem;
+    font-weight: bold;
     position: relative;
+  }
+
+  .card {
+    color: var(--color-white);
+
+    &--back,
+    &--front {
+      background-color: var(--color-accent);
+    }
+
+    &__title {
+      font-size: 4rem;
+      text-align: center;
+    }
+    &__theme {
+      font-size: 4rem;
+      font-weight: bold;
+    }
+    &__time {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    &__desc {
+      font-size: 2rem;
+      line-height: 2;
+      text-align: center;
+    }
+
+    @media (max-width: 100em) {
+      &__title {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      &__theme {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      &__time {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      &__desc {
+        font-size: 1.5rem;
+        line-height: 2;
+        text-align: center;
+      }
+    }
+
+    &--front {
+      .card__theme {
+        color: var(--color-accent-light);
+      }
+    }
+    &--back {
+      .card__theme {
+        color: var(--color-black);
+        text-align: center;
+      }
+    }
   }
 }

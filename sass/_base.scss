@@ -25,7 +25,6 @@ body {
 }
 
 .container {
-  overflow-x: hidden;
   display: grid;
   grid-template-columns: [full-start] 1fr [center-start] 77vw [center-end] 1fr [full-end];
   position: relative;
