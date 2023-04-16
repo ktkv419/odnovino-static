@@ -1,13 +1,11 @@
 .menu {
+  padding: 5rem 0 5rem;
   grid-column: full-start / full-end;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  &__title {
-  }
 
   &__slider {
     height: 100vh;
@@ -25,12 +23,16 @@
 
 .slide {
   width: 70vw;
-  height: 80vh;
+  min-height: 80vh;
   @media (max-width: 56.25em) {
+    min-height: 90vh;
     width: 90vw;
   }
 
   opacity: 0;
+
+  transform: translateX(0%) scale(0.6);
+  transition: transform 1s ease, opacity 1s ease 0.2s;
 
   position: absolute;
 
@@ -44,7 +46,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 4rem;
+    padding: 2rem;
     // display: flex;
     // justify-content: center;
     // align-items: center;
@@ -59,6 +61,21 @@
         display: grid;
         gap: 1rem;
         grid-template-columns: max-content 1fr 8ch;
+
+        @media (max-width: 56.25em) {
+          display: grid;
+          grid-template-columns: 1fr 8ch;
+          gap: 0;
+          &__line {
+            display: none;
+          }
+          &__price {
+            justify-self: end;
+          }
+          // &:not(:last-child) {
+          //   margin-bottom: 1rem;
+          // }
+        }
       }
     }
   }
@@ -67,50 +84,72 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-
+    inset: 0;
     filter: blur(0.5px) brightness(0.2);
-    background-size: contain no-repeat;
+    // background-size: contain no-repeat;
+    // background-size: cover no-repeat;
   }
-
-  transform: translateX(0%) scale(0.6);
-  transition: transform 1s ease, opacity 1s ease 0.2s;
 
   &.prev {
     transform: translateX(-80%) scale(0.8);
     opacity: 1;
     z-index: 1;
+    cursor: pointer;
+    filter: blur(1px);
   }
 
   &.curr {
     transform: translateX(0%) scale(1);
     opacity: 1;
     z-index: 2;
+    box-shadow: 0 1rem 4rem rgba($color: #000, $alpha: 1);
   }
 
   &.next {
     transform: translateX(80%) scale(0.8);
     opacity: 1;
     z-index: 1;
+    cursor: pointer;
+    filter: blur(1px);
+  }
+
+  &.starter {
+    .slide__bg {
+      background: url('../img/starter.JPG');
+      background-size: cover;
+      background-position: 50% 70%;
+    }
+  }
+
+  &.desert {
+    .slide__bg {
+      background: url('../img/desert.jpg');
+      background-size: cover;
+      background-position: 50% 60%;
+    }
   }
 
   &.hot {
     .slide__bg {
-      background: url('../img/hot.JPG');
-      background-position: 50% 25%;
+      background: url('../img/hot.webp');
+      background-size: cover;
+      background-position: 50% 45%;
     }
   }
 
-  &.hot-drinks {
-    background-color: violet;
-  }
-
   &.cold {
-    background-color: blue;
+    .slide__bg {
+      background: url('../img/cold.JPG');
+      background-size: cover;
+      background-position: 50% 45%;
+    }
   }
 
   &.drinks {
-    background-color: yellow;
+    .slide__bg {
+      background: url('../img/drinks.webp');
+      background-size: cover;
+      background-position: 50% 65%;
+    }
   }
 }

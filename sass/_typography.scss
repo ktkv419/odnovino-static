@@ -56,19 +56,14 @@ body {
 }
 
 .menu {
-  background-color: var(--color-black);
+  background: linear-gradient(var(--color-black), #333, var(--color-black));
   color: var(--color-white);
 
   &__title {
+    font-size: 5rem;
   }
 
   .slide {
-    // color: var(--color-white);
-
-    &__title {
-      //
-    }
-
     &__content {
       &__title {
         font-size: 4rem;
@@ -79,13 +74,17 @@ body {
 
       &__list {
         list-style: none;
+        font-size: 2rem;
+        @media (max-width: 56.25em) {
+          font-size: 1.5rem;
+        }
 
         // background-color: red;
         .item {
           &__line {
             width: 100%;
-            border-bottom: dotted 2px;
-            transform: translateY(-5px);
+            border-bottom: solid 1px;
+            transform: translateY(-1rem);
           }
         }
       }
@@ -100,4 +99,11 @@ body {
   font-size: 1.8rem;
   // line-height: normal;
   text-align: justify;
+}
+
+.events {
+  &__title {
+    font-size: 4rem;
+    position: relative;
+  }
 }
