@@ -8,12 +8,31 @@
 
   display: flex;
   justify-content: center;
-  align-items: center;
+
 
   white-space: break-spaces;
 
   &__placeholder {
     grid-column: full-start / full-end;
     height: 50vh;
+  }
+
+  .widget {
+    grid-column: center-start / center-end;
+    flex-direction: column;
+
+
+    &--title {
+      position: relative;
+      padding: 0.5rem 1rem;
+      float: left;
+
+
+
+    }
+
+    &--content {
+      float: left;
+    }
   }
 }

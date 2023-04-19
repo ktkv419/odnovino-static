@@ -28,7 +28,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 
-    @media (max-width: 56.25em) {
+    @media (max-width: 70.25em) {
       grid-template-columns: 1fr;
     }
   }
@@ -42,6 +42,7 @@
   position: relative;
 
   z-index: 2;
+
   @media (max-width: 56.25em) {
     min-height: 60vh;
   }
@@ -81,6 +82,7 @@
   &--front {
     transform: rotateY(0deg) scale(0.9);
   }
+
   &--back {
     transform: rotateY(-180deg) scale(0.9);
     padding: 2rem;
