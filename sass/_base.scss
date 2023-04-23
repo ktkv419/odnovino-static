@@ -14,7 +14,8 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 1rem = 10px
-  @media (max-width: 75em) {
+  scroll-behavior: smooth;
+  @media (max-width: 87.5em) {
     font-size: 50%;
   }
 }
@@ -26,11 +27,22 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: [full-start] 1fr [center-start] 77vw [center-end] 1fr [full-end];
+  grid-template-columns:
+    [full-start] minmax(0, 1fr) [center-start] minmax(90rem, 80vw) [center-end] minmax(
+      0,
+      1fr
+    )
+    [full-end];
   position: relative;
   z-index: 0;
-}
+  overflow-x: hidden;
 
-.nav {
-  height: 5vh;
+  @media all and (max-width: 56.25em) {
+    grid-template-columns:
+      [full-start] minmax(0, 1fr) [center-start] 90vw [center-end] minmax(
+        0,
+        1fr
+      )
+      [full-end];
+  }
 }

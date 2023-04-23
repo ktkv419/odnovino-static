@@ -32,9 +32,14 @@
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    margin-top: -10rem;
+    margin-top: -13rem;
 
     text-align: center;
+
+    &--main {
+      width: 38rem;
+      height: 38rem;
+    }
 
     &--add {
       position: relative;

@@ -21,22 +21,22 @@
   }
 
   &__box {
-    height: 80vh;
+    min-height: 80vh;
     margin-top: 4rem;
     display: grid;
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 
-    @media (max-width: 70.25em) {
+    @media (max-width: 56.25em) {
       grid-template-columns: 1fr;
     }
   }
 }
 
 .card {
-  perspective: 80rem;
-  -moz-perspective: 80rem;
+  perspective: 200rem;
+  -moz-perspective: 200rem;
   transform-style: preserve-3d;
   transition: all 0.5s;
   position: relative;
@@ -45,6 +45,9 @@
 
   @media (max-width: 56.25em) {
     min-height: 60vh;
+    width: 100%;
+    align-self: center;
+    justify-self: center;
   }
 
   &__title {

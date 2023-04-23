@@ -39,19 +39,16 @@ const foodNames = {
 `
   })
 
-  document
-    .querySelector('.menu__slider')
-    .insertAdjacentHTML('beforeend', menuHTML.join('\n'))
+  const slider = document.querySelector('.menu__slider')
+  slider.insertAdjacentHTML('beforeend', menuHTML.join('\n'))
 
-  const slides = [...document.querySelectorAll('.slide')]
+  const slides = [...slider.querySelectorAll('.slide')]
 
   slides
     .slice(0, 3)
     .forEach((slide, i) => slide.classList.add(slideActiveClasses[i]))
 
   ////////////////////////////////////////////////////////////////////////
-
-  const slider = document.querySelector('.menu__slider')
 
   let currentSlide = 1
   const changeSlide = ({ target }) => {
@@ -151,21 +148,105 @@ const foodNames = {
 })()
 
 /////////////////////////////////////////////////////////////////
+if (window.innerWidth > 900) {
+  document.querySelector('.nav--mobile').remove()
+  let lastScroll = 0
+  const nav = document.querySelector('.nav')
 
-let lastScroll = 0
-const nav = document.querySelector('.nav')
-
-const menuHide = () => {
-  const scrollHeight = window.scrollY
-  if (scrollHeight > lastScroll) {
-    nav.classList.add('hidden')
-  } else {
-    nav.classList.remove('hidden')
+  const menuHide = () => {
+    const scrollHeight = window.scrollY
+    if (scrollHeight > lastScroll) {
+      nav.classList.add('hidden')
+    } else {
+      nav.classList.remove('hidden')
+    }
+    lastScroll = scrollHeight
   }
-  lastScroll = scrollHeight
+
+  window.addEventListener('scroll', menuHide)
+} else {
+  document.querySelector('.nav').remove()
+  const navCheckbox = document.querySelector('.nav__checkbox')
+  const navBg = document.querySelector('.nav__bg')
+  const navBtns = document.querySelector('.nav__btn-box')
+
+  navBtns.addEventListener('click', () => {
+    navCheckbox.checked = false
+  })
+
+  navBg.addEventListener('click', () => {
+    navCheckbox.checked = false
+  })
 }
 
-window.addEventListener('scroll', menuHide)
+///////////////////////////////////////////////////////////////
+//////////////             ABOUT           ////////////////////
+///////////////////////////////////////////////////////////////
+class About {
+  constructor() {
+    this.slider = document.querySelector('.about__slider')
+    this.slides = [...this.slider.querySelectorAll('.slide')]
+    this.currentSlide = 0
+    this.dotBox = document.querySelector('.about__slider--dot-box')
+
+    this.aboutTitle = document.querySelector('h3.about__title')
+    this.handLeft = document.querySelector('img.about__title--before')
+    this.handRight = document.querySelector('img.about__title--after')
+
+    this.changeSlide(this.currentSlide)
+    this.slideInterval = this.createSliderAnimation()
+    this.slideTimeout = false
+
+    Array.from(this.dotBox.children).forEach((dot) => {
+      const degrees = Math.floor(Math.random() * 360)
+      dot.style.transform = `rotate(${degrees}deg`
+    })
+
+    this.dotBox.addEventListener('click', ({ target }) => {
+      if (!target.classList.contains('dots')) return
+      this.changeSlide(target.dataset.slide)
+      clearInterval(this.slideInterval)
+      clearTimeout(this.slideTimeout)
+      this.slideTimeout = this.createSliderTimeout()
+    })
+
+    new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        this.handLeft.classList.add('animated-left')
+        this.handRight.classList.add('animated-right')
+      } else {
+        this.handLeft.classList.remove('animated-left')
+        this.handRight.classList.remove('animated-right')
+      }
+    }).observe(this.aboutTitle)
+  }
+
+  changeSlide = (slide) => {
+    this.currentSlide = +slide
+    this.slides.forEach((slide) => slide.classList.remove('slide--active'))
+    this.slides[slide].classList.add('slide--active')
+    Array.from(this.dotBox.children).forEach((dot) =>
+      dot.classList.remove('dot--active')
+    )
+    this.dotBox.children[slide].classList.add('dot--active')
+  }
+
+  createSliderAnimation = () => {
+    return setInterval(() => {
+      const nextSlide =
+        this.currentSlide + 1 < this.slides.length ? this.currentSlide + 1 : 0
+      this.changeSlide(nextSlide)
+    }, 2000)
+  }
+
+  createSliderTimeout = () => {
+    return setTimeout(() => {
+      this.slideInterval = this.createSliderAnimation()
+    }, 5000)
+  }
+}
+
+const about = new About()
 
 ////////////////////////////////////// EXPERIMENTAL
 // const body = document.body,

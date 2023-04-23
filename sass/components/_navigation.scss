@@ -1,53 +1,179 @@
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
+@media all and (min-width: 56.25em) {
+  .nav {
+    &--mobile {
+      display: none;
+    }
 
-  z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
 
-  color: white;
+    z-index: 9999;
 
-  width: 100%;
+    color: white;
 
-  // background-color: black;
+    width: 100vw;
 
-  //////////////////////////////////////
-  // height: 7rem;
-  background-color: transparent;
-  backdrop-filter: blur(5px) brightness(60%);
-  //////////////////////////////////
+    height: 7rem;
+    background-color: rgba($color-black, 0.5);
+    backdrop-filter: blur(5px);
 
-  display: grid;
-  grid-template-columns: [full-start] 1fr [center-start] 77vw [center-end] 1fr [full-end];
+    display: grid;
+    grid-template-columns: [full-start] 1fr [center-start] 77vw [center-end] 1fr [full-end];
 
-  transition: transform 0.5s;
-  transform: translateY(0%);
+    transition: transform 0.5s;
+    transform: translateY(0%);
 
-  &.hidden {
-    transform: translateY(-110%);
+    &.hidden {
+      transform: translateY(-110%);
+    }
+
+    &__logo-box {
+      grid-column: 1/2;
+      justify-self: end;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 100%;
+    }
+
+    &__logo {
+      height: 6rem;
+    }
+
+    &__btn-box {
+      grid-column: center-start / center-end;
+
+      justify-self: end;
+
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    &__item {
+      // display: inline-block;
+      height: 100%;
+      width: 100%;
+    }
+
+    &__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      transition: background-color 0.5s;
+      &:hover {
+        background-color: rgba($color: #fff, $alpha: 0.5);
+      }
+    }
+  }
+}
+
+@media all and (max-width: 56.25em) {
+  .nav {
+    display: none;
   }
 
-  &__logo-box {
-    grid-column: center-start / center-end;
-    grid-row: 1/2;
+  .nav--mobile {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: 9998;
 
-    justify-self: start;
-  }
+    pointer-events: none;
 
-  &__btn-box {
-    grid-column: center-start / center-end;
-    grid-row: 1/2;
+    .nav {
+      &__checkbox {
+        display: none;
+      }
 
-    justify-self: end;
-  }
+      &__btn {
+        pointer-events: all;
 
-  &__btn__list {
-    width: 40vw;
-    display: flex;
-    justify-content: space-between;
-  }
+        display: block;
 
-  &__item {
-    display: inline-block;
+        z-index: 10000;
+        width: 5rem;
+        height: 5rem;
+        top: 5vw;
+        right: 5vw;
+        background-color: rgba($color-black, 0.8);
+        border-radius: 50%;
+        position: absolute;
+
+        &::before,
+        &::after {
+          width: 60%;
+          height: 2px;
+          background-color: var(--color-white);
+          display: inline-block;
+          content: '';
+          position: absolute;
+          transition: all 0.2s;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        &::before {
+          top: 33.333%;
+          transform-origin: left;
+          transform: translateX(-50%);
+        }
+
+        &::after {
+          transform-origin: right;
+          transform: translateX(-50%);
+          top: 66.666%;
+        }
+      }
+
+      &__bg {
+        top: 6vw;
+        right: 6vw;
+        position: fixed;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background-color: rgba($color-accent, 1);
+        z-index: 9998;
+        transform: scale(0);
+        transition: all 0.5s;
+      }
+
+      &__btn-box {
+        pointer-events: all;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: scaleX(0);
+        opacity: 0;
+        transition: opacity 0.5s, transform 0.5s;
+      }
+
+      &__checkbox:checked {
+        & ~ .nav__bg {
+          transform: scale(80);
+        }
+
+        & ~ .nav__btn-box {
+          opacity: 1;
+          transform: scaleX(1);
+        }
+
+        & + .nav__btn {
+          display: none;
+        }
+      }
+    }
   }
 }
