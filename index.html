@@ -25,16 +25,16 @@
           <a href="#" class="nav__link">Винная карта</a>
         </li>
         <li class="nav__item">
-          <a href="#" class="nav__link">Меню</a>
+          <a href="#menu" class="nav__link">Меню</a>
         </li>
         <li class="nav__item">
-          <a href="#" class="nav__link">Мероприятия</a>
+          <a href="#events" class="nav__link">Мероприятия</a>
         </li>
         <li class="nav__item">
-          <a href="#" class="nav__link">О нас</a>
+          <a href="#about" class="nav__link">О нас</a>
         </li>
         <li class="nav__item">
-          <a href="#" class="nav__link">Контакты</a>
+          <a href="#footer" class="nav__link">Контакты</a>
         </li>
       </ul>
     </nav>
@@ -87,10 +87,14 @@
           <img
             src="img/misc/mottodivider-2.png"
             alt=""
-            class="motto__divider"
+            class="motto__divider divider--1"
           />
           Откройте вкус мира с нами: ваша страсть, наши вина!
-          <img src="img/misc/mottodivider.png" alt="" class="motto__divider" />
+          <img
+            src="img/misc/mottodivider.png"
+            alt=""
+            class="motto__divider divider--2"
+          />
         </div>
       </section>
       <section class="about" id="about">
@@ -165,8 +169,8 @@
 
         <div class="menu__slider"></div>
       </section>
-      <section class="events" id="events">
-        <h2 class="events__title">Наши мероприятия</h2>
+      <section class="events">
+        <h2 class="events__title" id="events">Наши мероприятия</h2>
         <div class="events__box">
           <div class="card tasting">
             <div class="card--front">
@@ -233,27 +237,28 @@
         </div>
       </section>
       <div class="footer__placeholder" id="footer"></div>
-      <!-- <footer class="footer">
-        <div class="widget">
-          <div class="widget--title">Информация</div>
-          <div class="widget--content">
-            <p>
-              Сайт носит исключительно информационный характер и не является
-              публичной офертой. Все упомянутые логотипы являются собственностью
-              соответствующих владельцев.
-            </p>
-          </div>
-        </div>
-        <div class="widget">
-          <div class="widget--title">Контакты</div>
-          <div class="widget--content'">
-            <p>Позвонить</p>
-            <p>Написать</p>
-            <p>Адрес</p>
-          </div>
-        </div>
-      </footer> -->
     </div>
+    <footer class="footer">
+      <div class="widget">
+        <div class="widget--title">Информация</div>
+        <div class="widget--content">
+          <p>
+            Сайт носит исключительно информационный характер и не является
+            публичной офертой. Все упомянутые логотипы являются собственностью
+            соответствующих владельцев.
+          </p>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="widget--title">Контакты</div>
+        <div class="widget--content'">
+          <p>Позвонить</p>
+          <p>Написать</p>
+          <p>Адрес</p>
+        </div>
+      </div>
+    </footer>
+
     <!-- <div class="wine-level" style="left: 0"></div> -->
   </body>
 </html>

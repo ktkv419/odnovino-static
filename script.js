@@ -192,6 +192,7 @@ class About {
     this.aboutTitle = document.querySelector('h3.about__title')
     this.handLeft = document.querySelector('img.about__title--before')
     this.handRight = document.querySelector('img.about__title--after')
+    this.desc = document.querySelector('.about__desc')
 
     this.changeSlide(this.currentSlide)
     this.slideInterval = this.createSliderAnimation()
@@ -212,13 +213,20 @@ class About {
 
     new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
-        this.handLeft.classList.add('animated-left')
-        this.handRight.classList.add('animated-right')
+        this.handLeft.classList.add('hand-float-left')
+        this.handRight.classList.add('hand-float-right')
       } else {
-        this.handLeft.classList.remove('animated-left')
-        this.handRight.classList.remove('animated-right')
+        this.handLeft.classList.remove('hand-float-left')
+        this.handRight.classList.remove('hand-float-right')
       }
     }).observe(this.aboutTitle)
+
+    new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        this.desc.classList.add('fadein-left')
+        this.slider.classList.add('fadein-right')
+      }
+    }).observe(this.desc)
   }
 
   changeSlide = (slide) => {
@@ -247,6 +255,22 @@ class About {
 }
 
 const about = new About()
+
+////////////////////////////////////////////////////////////////
+class Events {
+  constructor() {
+    this.eventBox = document.querySelector('.events__box')
+    this.cards = [...document.querySelector('.events__box').children]
+
+    new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        this.cards.forEach((card) => card.classList.add('zoom-in-animation'))
+      }
+    }).observe(this.eventBox)
+  }
+}
+
+const events = new Events()
 
 ////////////////////////////////////// EXPERIMENTAL
 // const body = document.body,

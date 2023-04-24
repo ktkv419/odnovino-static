@@ -9,11 +9,12 @@
   display: flex;
   justify-content: center;
 
-
   white-space: break-spaces;
 
   &__placeholder {
     grid-column: full-start / full-end;
+    background-color: var(--color-black);
+    z-index: -1000;
     height: 50vh;
   }
 
@@ -21,14 +22,10 @@
     grid-column: center-start / center-end;
     flex-direction: column;
 
-
     &--title {
       position: relative;
       padding: 0.5rem 1rem;
       float: left;
-
-
-
     }
 
     &--content {
