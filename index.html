@@ -1,142 +1,120 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="script.js" type="module" defer></script>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
-    <title>Одно вино</title>
-  </head>
 
-  <body>
-    <nav class="nav hidden">
-      <a href="#" class="nav__logo-box">
-        <img src="img/odnovino.png" alt="" class="nav__logo" />
-      </a>
-      <ul class="nav__btn-box">
-        <li class="nav__item">
-          <a href="#" class="nav__link">Винная карта</a>
-        </li>
-        <li class="nav__item">
-          <a href="#menu" class="nav__link">Меню</a>
-        </li>
-        <li class="nav__item">
-          <a href="#events" class="nav__link">Мероприятия</a>
-        </li>
-        <li class="nav__item">
-          <a href="#about" class="nav__link">О нас</a>
-        </li>
-        <li class="nav__item">
-          <a href="#footer" class="nav__link">Контакты</a>
-        </li>
-      </ul>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="script.js" type="module" defer></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap"
+    rel="stylesheet" />
+  <title>Одно вино</title>
+</head>
 
-    <nav class="nav--mobile">
-      <label for="navigation" class="nav__btn"></label>
-      <input
-        type="checkbox"
-        name="navigation"
-        id="navigation"
-        class="nav__checkbox"
-      />
-      <div class="nav__bg"></div>
-      <ul class="nav__btn-box">
-        <li class="nav__item">
-          <a href="#" class="nav__link">Винная карта</a>
-        </li>
-        <li class="nav__item">
-          <a href="#menu" class="nav__link">Меню</a>
-        </li>
-        <li class="nav__item">
-          <a href="#events" class="nav__link">Мероприятия</a>
-        </li>
-        <li class="nav__item">
-          <a href="#about" class="nav__link">О нас</a>
-        </li>
-        <li class="nav__item">
-          <a href="#footer" class="nav__link">Контакты</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="container">
-      <section class="header">
-        <div class="header__mask">
-          <div class="heading-primary">
-            <!-- <h1 class="heading-primary--main">Одно вино</h1>
+<body>
+  <nav class="nav hidden">
+    <a href="#" class="nav__logo-box">
+      <!-- <img src="img/odnovino.png" alt="" class="nav__logo" /> -->
+      <div class="nav__logo"></div>
+    </a>
+    <ul class="nav__btn-box">
+      <li class="nav__item">
+        <a href="#" class="nav__link">Винная карта</a>
+      </li>
+      <li class="nav__item">
+        <a href="#menu" class="nav__link">Меню</a>
+      </li>
+      <li class="nav__item">
+        <a href="#events" class="nav__link">Мероприятия</a>
+      </li>
+      <li class="nav__item">
+        <a href="#about" class="nav__link">О нас</a>
+      </li>
+      <li class="nav__item">
+        <a href="#footer" class="nav__link">Контакты</a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="nav--mobile">
+    <label for="navigation" class="nav__btn"></label>
+    <input type="checkbox" name="navigation" id="navigation" class="nav__checkbox" />
+    <div class="nav__bg"></div>
+    <ul class="nav__btn-box">
+      <li class="nav__item">
+        <a href="#" class="nav__link">Винная карта</a>
+      </li>
+      <li class="nav__item">
+        <a href="#menu" class="nav__link">Меню</a>
+      </li>
+      <li class="nav__item">
+        <a href="#events" class="nav__link">Мероприятия</a>
+      </li>
+      <li class="nav__item">
+        <a href="#about" class="nav__link">О нас</a>
+      </li>
+      <li class="nav__item">
+        <a href="#footer" class="nav__link">Контакты</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container">
+    <section class="header">
+      <div class="header__mask">
+        <div class="heading-primary">
+          <!-- <h1 class="heading-primary--main">Одно вино</h1>
 
           <span class="heading-primary--sub">винный бар города Омска</span> -->
-            <img src="img/odnovino.png" alt="" class="heading-primary--main" />
-            <a
-              href="https://goo.gl/maps/HZUcBebQWx8nJcKW9"
-              class="heading-primary--add"
-              >Ленина 13а
-            </a>
-          </div>
+          <!-- <img src="img/odnovino.png" alt="" class="heading-primary--main" /> -->
+          <div class="heading-primary--main"></div>
+
+          <a href="https://goo.gl/maps/HZUcBebQWx8nJcKW9" class="heading-primary--add">Ленина 13а
+          </a>
         </div>
-      </section>
-      <section class="motto">
-        <div class="motto__text">
-          <img
-            src="img/misc/mottodivider-2.png"
-            alt=""
-            class="motto__divider divider--1"
-          />
-          Откройте вкус мира с нами: ваша страсть, наши вина!
-          <img
-            src="img/misc/mottodivider.png"
-            alt=""
-            class="motto__divider divider--2"
-          />
+      </div>
+    </section>
+    <section class="motto">
+      <div class="motto__text">
+        <img src="img/misc/mottodivider-2.png" alt="" class="motto__divider divider--1" />
+        Откройте вкус мира с нами: ваша страсть, наши вина!
+        <img src="img/misc/mottodivider.png" alt="" class="motto__divider divider--2" />
+      </div>
+    </section>
+    <section class="about" id="about">
+      <h3 class="about__title">
+        <img src="img/misc/about-before.png" alt="" class="about__title--before" />
+        Коллектив
+        <img src="img/misc/about-after.png" alt="" class="about__title--after" />
+      </h3>
+      <div class="about__desc">
+        Мы - команда энтузиастов, преданных миру вина. У нас вы найдете
+        широкий выбор лучших вин из различных регионов мира, от изысканных
+        шампанских до насыщенных красных вин. Наша команда профессионалов
+        всегда рада поделиться своими знаниями и рекомендациями. Мы гордимся
+        уютным и стильным интерьером, созданным с любовью к вину и вниманием к
+        деталям. Мы также предлагаем винные мероприятия, дегустации и
+        мастер-классы, чтобы расширить ваше винное образование.
+      </div>
+      <div class="about__slider">
+        <img src="img/gallery/photo_1.png" alt="" class="slide" />
+        <img src="img/gallery/photo_2.png" alt="" class="slide" />
+        <img src="img/gallery/photo_3.png" alt="" class="slide" />
+        <img src="img/gallery/photo_4.png" alt="" class="slide" />
+        <img src="img/gallery/photo_5.png" alt="" class="slide" />
+        <img src="img/gallery/photo_6.png" alt="" class="slide" />
+        <div class="about__slider--dot-box">
+          <div class="dots" data-slide="0"></div>
+          <div class="dots" data-slide="1"></div>
+          <div class="dots" data-slide="2"></div>
+          <div class="dots" data-slide="3"></div>
+          <div class="dots" data-slide="4"></div>
+          <div class="dots" data-slide="5"></div>
         </div>
-      </section>
-      <section class="about" id="about">
-        <h3 class="about__title">
-          <img
-            src="img/misc/about-before.png"
-            alt=""
-            class="about__title--before"
-          />
-          Коллектив
-          <img
-            src="img/misc/about-after.png"
-            alt=""
-            class="about__title--after"
-          />
-        </h3>
-        <div class="about__desc">
-          Мы - команда энтузиастов, преданных миру вина. У нас вы найдете
-          широкий выбор лучших вин из различных регионов мира, от изысканных
-          шампанских до насыщенных красных вин. Наша команда профессионалов
-          всегда рада поделиться своими знаниями и рекомендациями. Мы гордимся
-          уютным и стильным интерьером, созданным с любовью к вину и вниманием к
-          деталям. Мы также предлагаем винные мероприятия, дегустации и
-          мастер-классы, чтобы расширить ваше винное образование.
-        </div>
-        <div class="about__slider">
-          <img src="img/gallery/photo_1.png" alt="" class="slide" />
-          <img src="img/gallery/photo_2.png" alt="" class="slide" />
-          <img src="img/gallery/photo_3.png" alt="" class="slide" />
-          <img src="img/gallery/photo_4.png" alt="" class="slide" />
-          <img src="img/gallery/photo_5.png" alt="" class="slide" />
-          <img src="img/gallery/photo_6.png" alt="" class="slide" />
-          <div class="about__slider--dot-box">
-            <div class="dots" data-slide="0"></div>
-            <div class="dots" data-slide="1"></div>
-            <div class="dots" data-slide="2"></div>
-            <div class="dots" data-slide="3"></div>
-            <div class="dots" data-slide="4"></div>
-            <div class="dots" data-slide="5"></div>
-          </div>
-        </div>
-        <!-- <h3 class="about__title">Наша семья</h3>
+      </div>
+      <!-- <h3 class="about__title">Наша семья</h3>
         <div class="about__content">
           <div class="about__text lu">
             Мы - команда энтузиастов, преданных миру вина. У нас вы найдете
@@ -163,102 +141,177 @@
             <div class="picture-6"></div>
           </div>
         </div> -->
-      </section>
-      <section class="menu" id="menu">
-        <h2 class="menu__title">Наше меню</h2>
+    </section>
+    <section class="menu" id="menu">
+      <h2 class="menu__title">Наше меню</h2>
 
-        <div class="menu__slider"></div>
-      </section>
-      <section class="events">
-        <h2 class="events__title" id="events">Наши мероприятия</h2>
-        <div class="events__box">
-          <div class="card tasting">
-            <div class="card--front">
-              <h3 class="card__title">Тематическая дегустация</h3>
-              <div class="card__theme">Вино искусства</div>
-              <div class="card__time">
-                <div class="time">18:00</div>
-                <div class="date">15.05.23</div>
-              </div>
-            </div>
+      <!-- <div class="menu__slider"></div> -->
+      <div class="menu__content">
 
-            <div class="card--back">
-              <div class="card__theme">Вино искусства</div>
-              <div class="card__desc">
-                В этой теме дегустации вина можно провести путешествие в мир
-                искусства, сочетая его с вином. Можно выбрать вина, которые
-                соответствуют определенным стилям и направлениям искусства,
-                таким как импрессионизм, сюрреализм, абстракционизм и другим.
-                Гости смогут насладиться вином, в то время как вы будете
-                делиться историей искусства и его влиянием на вина, которые они
-                пьют.
-              </div>
+        <div class="menu__items hidden">
+          <a href="#menu-items" class="menu__items__back">Back</a>
+          <div class="menu__item hidden starter">Закуски</div>
+          <div class="menu__item hidden main">
+            <h5 class="menulist__title">Основное</h5>
+            <ul class="menulist__items">
+              <li class="item">
+                <div class="item__title">Одно</div>
+                <div class="item__line"></div>
+                <div class="item__price">100 руб.</div>
+              </li>
+              <li class="item">
+                <div class="item__title">Второе</div>
+                <div class="item__line"></div>
+                <div class="item__price">150 руб.</div>
+              </li>
+              <li class="item">
+                <div class="item__title">Третье</div>
+                <div class="item__line"></div>
+                <div class="item__price">200 руб.</div>
+              </li>
+              <li class="item">
+                <div class="item__title">Четвертое</div>
+                <div class="item__line"></div>
+                <div class="item__price">100 руб.</div>
+              </li>
+              <li class="item">
+                <div class="item__title">Пятое</div>
+                <div class="item__line"></div>
+                <div class="item__price">150 руб.</div>
+              </li>
+              <li class="item">
+                <div class="item__title"></div>
+                <div class="item__line"></div>
+                <div class="item__price"></div>
+              </li>
+            </ul>
+          </div>
+          <div class="menu__item hidden salad">Салат</div>
+          <div class="menu__item hidden soup">Суп</div>
+          <div class="menu__item hidden steak">Стейк</div>
+          <div class="menu__item hidden garnish">Гарниры</div>
+          <div class="menu__item hidden breakfast">Завтрак</div>
+          <div class="menu__item hidden desert">Десерт</div>
+        </div>
+        <div class="menu__categories">
+          <a href="#starter" class="category category--1 starter">
+            <h5 class="category__title">Закуски</h5>
+          </a>
+          <a href="#main" class="category category--2 main">
+            <h5 class="category__title">Основное</h5>
+          </a>
+          <a href="#salad" class="category category--3 salad">
+            <h5 class="category__title">Салаты</h5>
+          </a>
+          <a href="#soup" class="category category--4 soup">
+            <h5 class="category__title">Супы</h5>
+          </a>
+          <a href='#steak' class="category category--5 steak">
+            <h5 class="category__title">Стейки</h5>
+          </a>
+          <a href='#garnish' class="category category--6 garnish">
+            <h5 class="category__title">Гарниры</h5>
+          </a>
+          <a href='#breakfast' class="category category--7 breakfast">
+            <h5 class="category__title">Запоздалые завтраки</h5>
+          </a>
+          <a href='#desert' class="category category--8 desert">
+            <h5 class="category__title">Десерты</h5>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="events">
+      <h2 class="events__title" id="events">Наши мероприятия</h2>
+      <div class="events__box">
+        <div class="card tasting">
+          <div class="card--front">
+            <h3 class="card__title">Тематическая дегустация</h3>
+            <div class="card__theme">Вино искусства</div>
+            <div class="card__time">
+              <div class="time">18:00</div>
+              <div class="date">15.05.23</div>
             </div>
           </div>
-          <div class="card private-tasting">
-            <div class="card--front">
-              <h3 class="card__title">Внутренняя дегустация</h3>
-              <div class="card__theme">Путешествие по винным регионам мира</div>
-              <div class="card__time">
-                <div class="time">17:00</div>
-                <div class="date">18.05.23</div>
-              </div>
-            </div>
 
-            <div class="card--back">
-              <div class="card__theme">Путешествие по винным регионам мира</div>
-              <div class="card__desc">
-                В этой теме дегустации вина можно сфокусироваться на различных
-                винных регионах мира, таких как Бордо, Тоскана, Напа-Вэлли,
-                Бургундия, Мендоса и другие. Можно предложить разнообразные вина
-                из этих регионов и рассказать о их особенностях, традициях
-                производства и уникальных вкусовых профилях.
-              </div>
-            </div>
-          </div>
-          <div class="card casino">
-            <div class="card--front">
-              <h3 class="card__title">Винное казино</h3>
-              <div class="card__theme">Vinoteca Royale</div>
-              <div class="card__time">12:00</div>
-            </div>
-
-            <div class="card--back">
-              <h3 class="card__theme">Vinoteca Royale</h3>
-              <div class="card__desc">
-                Винные крупье с радостью поделятся своими знаниями о вине и
-                подскажут вам о лучших винах, которые можно использовать в
-                играх. Вы также сможете насладиться широким выбором изысканных
-                вин из разных регионов мира, которые подчеркнут атмосферу
-                роскоши и изыска винного казино.
-              </div>
+          <div class="card--back">
+            <div class="card__theme">Вино искусства</div>
+            <div class="card__desc">
+              В этой теме дегустации вина можно провести путешествие в мир
+              искусства, сочетая его с вином. Можно выбрать вина, которые
+              соответствуют определенным стилям и направлениям искусства,
+              таким как импрессионизм, сюрреализм, абстракционизм и другим.
+              Гости смогут насладиться вином, в то время как вы будете
+              делиться историей искусства и его влиянием на вина, которые они
+              пьют.
             </div>
           </div>
         </div>
-      </section>
-      <div class="footer__placeholder" id="footer"></div>
+        <div class="card private-tasting">
+          <div class="card--front">
+            <h3 class="card__title">Внутренняя дегустация</h3>
+            <div class="card__theme">Путешествие по винным регионам мира</div>
+            <div class="card__time">
+              <div class="time">17:00</div>
+              <div class="date">18.05.23</div>
+            </div>
+          </div>
+
+          <div class="card--back">
+            <div class="card__theme">Путешествие по винным регионам мира</div>
+            <div class="card__desc">
+              В этой теме дегустации вина можно сфокусироваться на различных
+              винных регионах мира, таких как Бордо, Тоскана, Напа-Вэлли,
+              Бургундия, Мендоса и другие. Можно предложить разнообразные вина
+              из этих регионов и рассказать о их особенностях, традициях
+              производства и уникальных вкусовых профилях.
+            </div>
+          </div>
+        </div>
+        <div class="card casino">
+          <div class="card--front">
+            <h3 class="card__title">Винное казино</h3>
+            <div class="card__theme">Vinoteca Royale</div>
+            <div class="card__time">12:00</div>
+          </div>
+
+          <div class="card--back">
+            <h3 class="card__theme">Vinoteca Royale</h3>
+            <div class="card__desc">
+              Винные крупье с радостью поделятся своими знаниями о вине и
+              подскажут вам о лучших винах, которые можно использовать в
+              играх. Вы также сможете насладиться широким выбором изысканных
+              вин из разных регионов мира, которые подчеркнут атмосферу
+              роскоши и изыска винного казино.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="footer__placeholder" id="footer"></div>
+  </div>
+  <footer class="footer">
+    <div class="widget">
+      <div class="widget--title">Информация</div>
+      <div class="widget--content">
+        <p>
+          Сайт носит исключительно информационный характер и не является
+          публичной офертой. Все упомянутые логотипы являются собственностью
+          соответствующих владельцев.
+        </p>
+      </div>
     </div>
-    <footer class="footer">
-      <div class="widget">
-        <div class="widget--title">Информация</div>
-        <div class="widget--content">
-          <p>
-            Сайт носит исключительно информационный характер и не является
-            публичной офертой. Все упомянутые логотипы являются собственностью
-            соответствующих владельцев.
-          </p>
-        </div>
+    <div class="widget">
+      <div class="widget--title">Контакты</div>
+      <div class="widget--content'">
+        <p>Позвонить</p>
+        <p>Написать</p>
+        <p>Адрес</p>
       </div>
-      <div class="widget">
-        <div class="widget--title">Контакты</div>
-        <div class="widget--content'">
-          <p>Позвонить</p>
-          <p>Написать</p>
-          <p>Адрес</p>
-        </div>
-      </div>
-    </footer>
+    </div>
+  </footer>
 
-    <!-- <div class="wine-level" style="left: 0"></div> -->
-  </body>
+  <!-- <div class="wine-level" style="left: 0"></div> -->
+</body>
+
 </html>

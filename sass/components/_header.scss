@@ -14,6 +14,7 @@
   z-index: -1;
 
   position: relative;
+
   &__mask {
     position: absolute;
     inset: 0;
@@ -39,6 +40,11 @@
     &--main {
       width: 38rem;
       height: 38rem;
+      background-color: var(--color-white);
+      -webkit-mask: url('../../img/odnovino.png');
+      -webkit-mask-type: alpha;
+      -webkit-mask-size: cover;
+      -webkit-mask-position: center center;
     }
 
     &--add {

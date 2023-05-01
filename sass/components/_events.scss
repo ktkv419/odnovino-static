@@ -2,6 +2,7 @@
   0% {
     transform: scale(0);
   }
+
   100% {
     transform: scale(1);
   }
@@ -13,9 +14,11 @@
   flex-direction: column;
   align-items: center;
   padding-top: 10rem;
+  margin-bottom: 10rem;
 
   &__title {
     text-align: center;
+
     &::after {
       content: '';
       z-index: 2;
@@ -48,15 +51,20 @@
   animation: zoom-in 2s;
   animation-fill-mode: forwards;
 }
+
 .card {
   perspective: 200rem;
   -moz-perspective: 200rem;
-  transform-style: preserve-3d;
+  // transform-style: preserve-3d;
   transition: all 0.5s;
   position: relative;
   transform: scale(0);
 
   z-index: 2;
+
+  @media (min-width: 56.25em) {
+    transform-style: preserve-3d;
+  }
 
   @media (max-width: 56.25em) {
     min-height: 60vh;
@@ -95,25 +103,39 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    &>* {
+      backface-visibility: hidden;
+    }
   }
 
   &--front {
     transform: rotateY(0deg) scale(0.9) translateZ(1px);
     z-index: 2;
+
+    &.hover {
+      transform: rotateY(180deg) scale(1) translateZ(1px);
+    }
   }
 
   &--back {
     transform: rotateY(-180deg) scale(0.9) translateZ(1px);
     z-index: 1;
     padding: 2rem;
+
+    &.hover {
+      transform: rotateY(0deg) scale(1) translateZ(1px);
+    }
   }
 
-  &:hover &--front {
-    transform: rotateY(180deg) scale(1) translateZ(1px);
-  }
+  @media all and (min-width: 56.25em) {
+    &:hover &--front {
+      transform: rotateY(180deg) scale(1) translateZ(1px);
+    }
 
-  &:hover &--back {
-    transform: rotateY(0deg) scale(1) translateZ(1px);
+    &:hover &--back {
+      transform: rotateY(0deg) scale(1) translateZ(1px);
+    }
   }
 }
 

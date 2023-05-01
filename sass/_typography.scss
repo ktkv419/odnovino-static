@@ -62,10 +62,12 @@ body {
 
 .nav--mobile {
   font-size: 4rem;
+  color: var(--color-white)
 }
 
 .motto {
   background-color: var(--color-white);
+
   &__text {
     font-family: $fancy-font;
     font-size: 5rem;
@@ -75,9 +77,16 @@ body {
 
 .about {
   background-color: var(--color-white);
+
   &__title {
     font-size: clamp(2rem, 8vw, 6rem);
     font-weight: bold;
+  }
+
+  &__desc {
+    &::first-letter {
+      margin-left: 6rem;
+    }
   }
 
   // font-size: 2rem;
@@ -87,41 +96,44 @@ body {
 }
 
 .menu {
-  background: linear-gradient(var(--color-black), #333, var(--color-black));
-  color: var(--color-white);
+  // background-color: var(--color-white);
+  // color: var(--color-black);
 
   &__title {
     font-size: 6rem;
     font-weight: bold;
   }
 
-  .slide {
-    &__content {
-      &__title {
-        font-size: 4rem;
-        justify-self: center;
-        font-family: $fancy-font;
-        line-height: 1;
-      }
 
-      &__list {
-        list-style: none;
-        font-size: 2rem;
-        @media (max-width: 56.25em) {
-          font-size: 1.5rem;
-        }
+  // .slide {
+  //   // color: var(--color-white);
 
-        // background-color: red;
-        .item {
-          &__line {
-            width: 100%;
-            border-bottom: solid 1px;
-            transform: translateY(-1rem);
-          }
-        }
-      }
-    }
-  }
+  //   &__content {
+  //     &__title {
+  //       font-size: 4rem;
+  //       justify-self: center;
+  //       font-family: $fancy-font;
+  //       line-height: 1;
+  //     }
+
+  //     &__list {
+  //       list-style: none;
+  //       font-size: 2rem;
+
+  //       @media (max-width: 56.25em) {
+  //         font-size: 1.5rem;
+  //       }
+
+  //       .item {
+  //         &__line {
+  //           width: 100%;
+  //           border-bottom: solid 1px;
+  //           transform: translateY(-1rem);
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 .events {
@@ -138,17 +150,22 @@ body {
 
     &--back,
     &--front {
-      background-color: var(--color-accent);
+      // background-color: var(--color-accent);
+
+      // background-color: var(--color-black);
+      background: linear-gradient(135deg, rgba($color-accent, 1) 0%, rgba($color-accent, 1) 5%, rgba(0, 0, 0, 1) 5%, rgb(34, 34, 34) 100%);
     }
 
     &__title {
+      width: 80%;
       font-size: clamp(2rem, 4vw, 4rem);
       text-align: center;
     }
 
     &__theme {
       font-size: clamp(2rem, 1.75vw, 4rem);
-      font-weight: bold;
+      // font-weight: bold;
+      filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 1));
     }
 
     &__time {
@@ -157,9 +174,15 @@ body {
     }
 
     &__desc {
-      font-size: clamp(1.5rem, 1.25vw, 2rem);
+      font-size: clamp(1.75rem, 1.5vw, 2rem);
       line-height: 2;
-      text-align: center;
+
+      text-align: justify;
+      hyphens: auto;
+
+      &::first-letter {
+        margin-left: 4rem;
+      }
     }
 
     // @media (max-width: 100em) {
@@ -188,9 +211,10 @@ body {
         color: var(--color-accent-light);
       }
     }
+
     &--back {
       .card__theme {
-        color: var(--color-black);
+        // color: var(--color-black);
         text-align: center;
       }
     }
