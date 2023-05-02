@@ -10,188 +10,196 @@ const foodNames = {
   desert: 'Десерт',
 }
 
-  ; (async () => {
-    //   const menu = await fetchMenu(foodTypesAll)
-    //   const foodTypes = Object.keys(menu)
+;(async () => {
+  //   const menu = await fetchMenu(foodTypesAll)
+  //   const foodTypes = Object.keys(menu)
 
-    //   const menuHTML = foodTypes.map((type) => {
-    //     return `
-    //             <div class="slide ${type}">
-    //             <div class="slide__bg"></div>
-    //             <div class="slide__content">
-    //               <div class="slide__content__title">${foodNames[type]}</div>
-    //               <ul class="slide__content__list">
-    //       ${menu[type]
-    //         .map((item) => {
-    //           return `
-    //                 <li class="item">
-    //                   <div class="item__title">
-    //                   ${item[1]}</div>
-    //                   <div class="item__line"></div>
-    //                   <div class="item__price">${item[2]} руб.</div>
-    //                 </li>
-    //         `
-    //         })
-    //         .join('\n')}
-    //               </ul>
-    //             </div>
-    //           </div>
-    // `
-    //   })
+  //   const menuHTML = foodTypes.map((type) => {
+  //     return `
+  //             <div class="slide ${type}">
+  //             <div class="slide__bg"></div>
+  //             <div class="slide__content">
+  //               <div class="slide__content__title">${foodNames[type]}</div>
+  //               <ul class="slide__content__list">
+  //       ${menu[type]
+  //         .map((item) => {
+  //           return `
+  //                 <li class="item">
+  //                   <div class="item__title">
+  //                   ${item[1]}</div>
+  //                   <div class="item__line"></div>
+  //                   <div class="item__price">${item[2]} руб.</div>
+  //                 </li>
+  //         `
+  //         })
+  //         .join('\n')}
+  //               </ul>
+  //             </div>
+  //           </div>
+  // `
+  //   })
 
-    //   const slider = document.querySelector('.menu__slider')
-    //   slider.insertAdjacentHTML('beforeend', menuHTML.join('\n'))
+  //   const slider = document.querySelector('.menu__slider')
+  //   slider.insertAdjacentHTML('beforeend', menuHTML.join('\n'))
 
-    //   const slides = [...slider.querySelectorAll('.slide')]
+  //   const slides = [...slider.querySelectorAll('.slide')]
 
-    //   slides
-    //     .slice(0, 3)
-    //     .forEach((slide, i) => slide.classList.add(slideActiveClasses[i]))
+  //   slides
+  //     .slice(0, 3)
+  //     .forEach((slide, i) => slide.classList.add(slideActiveClasses[i]))
 
-    //   ////////////////////////////////////////////////////////////////////////
+  //   ////////////////////////////////////////////////////////////////////////
 
-    //   let currentSlide = 1
-    //   const changeSlide = ({ target }) => {
-    //     const slide = target.classList.contains('.slide')
-    //       ? target
-    //       : target.closest('.slide')
-    //     if (!slide || slide.classList.contains('curr')) return
+  //   let currentSlide = 1
+  //   const changeSlide = ({ target }) => {
+  //     const slide = target.classList.contains('.slide')
+  //       ? target
+  //       : target.closest('.slide')
+  //     if (!slide || slide.classList.contains('curr')) return
 
-    //     slider.removeEventListener('click', changeSlide)
-    //     setTimeout(() => {
-    //       slider.addEventListener('click', changeSlide)
-    //       swipeAnimationRunning = false
-    //     }, 800)
+  //     slider.removeEventListener('click', changeSlide)
+  //     setTimeout(() => {
+  //       slider.addEventListener('click', changeSlide)
+  //       swipeAnimationRunning = false
+  //     }, 800)
 
-    //     if (slide.classList.contains('prev'))
-    //       currentSlide =
-    //         currentSlide - 1 > -1
-    //           ? currentSlide - 1
-    //           : (currentSlide = slides.length - 1)
-    //     if (slide.classList.contains('next'))
-    //       currentSlide =
-    //         currentSlide + 1 < slides.length ? currentSlide + 1 : (currentSlide = 0)
+  //     if (slide.classList.contains('prev'))
+  //       currentSlide =
+  //         currentSlide - 1 > -1
+  //           ? currentSlide - 1
+  //           : (currentSlide = slides.length - 1)
+  //     if (slide.classList.contains('next'))
+  //       currentSlide =
+  //         currentSlide + 1 < slides.length ? currentSlide + 1 : (currentSlide = 0)
 
-    ////////////////// DEBUG PURPOSES
-    // if (slide.classList.contains('prev')) {
-    //   if (currentSlide - 1 > -1) {
-    //     currentSlide = currentSlide - 1
-    //     console.log('test')
-    //   } else {
-    //     currentSlide = slides.length - 1
-    //     console.log('test')
-    //   }
-    // } else if (slide.classList.contains('next')) {
-    //   if (currentSlide + 1 < slides.length) {
-    //     currentSlide = currentSlide + 1
-    //     console.log('test')
-    //   } else {
-    //     currentSlide = 0
-    //     console.log('test')
-    //   }
-    // }
+  ////////////////// DEBUG PURPOSES
+  // if (slide.classList.contains('prev')) {
+  //   if (currentSlide - 1 > -1) {
+  //     currentSlide = currentSlide - 1
+  //     console.log('test')
+  //   } else {
+  //     currentSlide = slides.length - 1
+  //     console.log('test')
+  //   }
+  // } else if (slide.classList.contains('next')) {
+  //   if (currentSlide + 1 < slides.length) {
+  //     currentSlide = currentSlide + 1
+  //     console.log('test')
+  //   } else {
+  //     currentSlide = 0
+  //     console.log('test')
+  //   }
+  // }
 
+  //   const nextSlide = currentSlide + 1 < slides.length ? currentSlide + 1 : 0
+  //   const prevSlide =
+  //     currentSlide - 1 > -1 ? currentSlide - 1 : slides.length - 1
 
+  //   slides.forEach((el) => el.classList.remove('prev', 'next', 'curr'))
 
-    //   const nextSlide = currentSlide + 1 < slides.length ? currentSlide + 1 : 0
-    //   const prevSlide =
-    //     currentSlide - 1 > -1 ? currentSlide - 1 : slides.length - 1
+  //   slides[prevSlide].classList.add('prev')
+  //   slides[nextSlide].classList.add('next')
+  //   slide.classList.add('curr')
+  // }
 
-    //   slides.forEach((el) => el.classList.remove('prev', 'next', 'curr'))
+  // slider.addEventListener('click', changeSlide)
 
-    //   slides[prevSlide].classList.add('prev')
-    //   slides[nextSlide].classList.add('next')
-    //   slide.classList.add('curr')
-    // }
+  // const menuContent = document.querySelector('.menu__content')
+  const menuCategories = document.querySelector('.menu__categories')
+  // const menuCategories = [...document.querySelectorAll('.menu__item')]
+  const menuItemsContainer = document.querySelector('.menu__items')
+  const menuItems = [...document.querySelector('.menu__items').children]
 
-    // slider.addEventListener('click', changeSlide)
+  const menuArray = [
+    'starter',
+    'main',
+    'salad',
+    'soup',
+    'steak',
+    'garnish',
+    'breakfast',
+    'desert',
+  ]
 
-    const menuContent = document.querySelector('.menu__content')
-    const menuCategories = [...document.querySelectorAll('.menu__item')]
-    const menuItems = document.querySelector('.menu__items')
-
-    const menuArray = ['starter', 'main', 'salad', 'soup', 'steak', 'garnish', 'breakfast', 'desert']
-
-    const menuChange = () => {
-      const hash = window.location.hash.slice(1)
-      if (menuArray.includes(hash)) {
-        menuContent.classList.add('hidden')
-        setTimeout(() => {
-          menuItems.classList.remove('hidden')
-          console.log(document.querySelector(`.menu__item.${hash}`))
-          document.querySelector(`.menu__item.${hash}`).classList.remove('hidden')
-        }, 300)
-      }
-      if (hash === 'menu-items') {
-        menuItems.classList.add('hidden')
-        setTimeout(() => {
-          menuCategories.forEach(item => {
-            item.classList.add('hidden')
-          })
-          menuContent.classList.remove('hidden')
-        }, 300)
-      }
+  const menuChange = () => {
+    const hash = window.location.hash.slice(1)
+    if (menuArray.includes(hash)) {
+      menuCategories.classList.add('hidden')
+      setTimeout(() => {
+        menuItemsContainer.classList.remove('hidden')
+        document.querySelector(`.menu__item.${hash}`).classList.remove('hidden')
+      }, 300)
     }
-
-    window.addEventListener('hashchange', menuChange)
-
-    // const menuBackButton = document.querySelector('.menu__items__back')
-    // menuBackButton.addEventListener('click', (e) => {
-    //   e.preventDefault()
-    //   window.location.hash = '';
-    // })
-
-    // const animationWiggle = (el) => {
-    //   el.style.transform = `rotate(${degrees}deg`
-    // }
-
-    // categories.forEach(category => category.addEventListener('mouseover', () => {
-    // }))
-    // categories.forEach(category => category.addEventListener('mouseout', () => {
-    // }))
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-
-    let swipeAnimationRunning = false
-
-    let touchstartX = 0
-    let touchendX = 0
-
-    const swipeMenu = (swipeSlide) => {
-      changeSlide({ target: swipeSlide })
+    if (hash === 'menu-items') {
+      menuItemsContainer.classList.add('hidden')
+      setTimeout(() => {
+        menuItems.forEach((item) => {
+          item.classList.add('hidden')
+        })
+        menuCategories.classList.remove('hidden')
+      }, 300)
     }
+  }
 
-    function checkDirection() {
-      if (swipeAnimationRunning) return
-      swipeAnimationRunning = true
+  window.addEventListener('hashchange', menuChange)
 
-      let swipeSlide
-      if (touchendX < touchstartX) {
-        swipeSlide = document.querySelector('.slide.next')
-      } else if (touchendX > touchstartX) {
-        swipeSlide = document.querySelector('.slide.prev')
-      }
-      console.log(swipeSlide)
-      swipeMenu(swipeSlide)
+  // const menuBackButton = document.querySelector('.menu__items__back')
+  // menuBackButton.addEventListener('click', (e) => {
+  //   e.preventDefault()
+  //   window.location.hash = '';
+  // })
+
+  // const animationWiggle = (el) => {
+  //   el.style.transform = `rotate(${degrees}deg`
+  // }
+
+  // categories.forEach(category => category.addEventListener('mouseover', () => {
+  // }))
+  // categories.forEach(category => category.addEventListener('mouseout', () => {
+  // }))
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+
+  let swipeAnimationRunning = false
+
+  let touchstartX = 0
+  let touchendX = 0
+
+  const swipeMenu = (swipeSlide) => {
+    changeSlide({ target: swipeSlide })
+  }
+
+  function checkDirection() {
+    if (swipeAnimationRunning) return
+    swipeAnimationRunning = true
+
+    let swipeSlide
+    if (touchendX < touchstartX) {
+      swipeSlide = document.querySelector('.slide.next')
+    } else if (touchendX > touchstartX) {
+      swipeSlide = document.querySelector('.slide.prev')
     }
+    console.log(swipeSlide)
+    swipeMenu(swipeSlide)
+  }
 
-    document.body.addEventListener('touchstart', function () { })
+  document.body.addEventListener('touchstart', function () {})
 
-    document
-      .querySelector('.menu__slider')
-      .addEventListener('touchstart', (e) => {
-        touchstartX = e.changedTouches[0].screenX
-      })
-
-    document.querySelector('.menu__slider').addEventListener('touchend', (e) => {
-      touchendX = e.changedTouches[0].screenX
-      if (
-        Math.abs(touchstartX) - Math.abs(touchendX) > 100 ||
-        Math.abs(touchendX) - Math.abs(touchstartX) > 100
-      )
-        checkDirection()
+  document
+    .querySelector('.menu__slider')
+    .addEventListener('touchstart', (e) => {
+      touchstartX = e.changedTouches[0].screenX
     })
-  })()
+
+  document.querySelector('.menu__slider').addEventListener('touchend', (e) => {
+    touchendX = e.changedTouches[0].screenX
+    if (
+      Math.abs(touchstartX) - Math.abs(touchendX) > 100 ||
+      Math.abs(touchendX) - Math.abs(touchstartX) > 100
+    )
+      checkDirection()
+  })
+})()
 
 /////////////////////////////////////////////////////////////////
 if (window.innerWidth > 900) {
@@ -315,13 +323,15 @@ class Events {
     }).observe(this.eventBox)
 
     if (window.innerWidth < 900) {
-      this.cards.forEach(card => card.addEventListener('click', (e) => {
-        console.log(e.target.closest('.card').children)
-        const cardSides = [...e.target.closest('.card').children]
-        cardSides.forEach(side => {
-          side.classList.toggle('hover')
+      this.cards.forEach((card) =>
+        card.addEventListener('click', (e) => {
+          console.log(e.target.closest('.card').children)
+          const cardSides = [...e.target.closest('.card').children]
+          cardSides.forEach((side) => {
+            side.classList.toggle('hover')
+          })
         })
-      }))
+      )
     }
   }
 }

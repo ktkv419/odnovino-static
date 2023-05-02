@@ -62,7 +62,7 @@ body {
 
 .nav--mobile {
   font-size: 4rem;
-  color: var(--color-white)
+  color: var(--color-white);
 }
 
 .motto {
@@ -99,11 +99,26 @@ body {
   // background-color: var(--color-white);
   // color: var(--color-black);
 
+  .menulist {
+    &__title {
+      font-size: 5rem;
+    }
+  }
+
+  .item {
+    font-size: 2rem;
+  }
+
+  &__items {
+    &__back {
+      font-size: 2rem;
+    }
+  }
+
   &__title {
     font-size: 6rem;
     font-weight: bold;
   }
-
 
   // .slide {
   //   // color: var(--color-white);
@@ -153,7 +168,13 @@ body {
       // background-color: var(--color-accent);
 
       // background-color: var(--color-black);
-      background: linear-gradient(135deg, rgba($color-accent, 1) 0%, rgba($color-accent, 1) 5%, rgba(0, 0, 0, 1) 5%, rgb(34, 34, 34) 100%);
+      background: linear-gradient(
+        135deg,
+        rgba($color-accent, 1) 0%,
+        rgba($color-accent, 1) 5%,
+        rgba(0, 0, 0, 1) 5%,
+        rgb(34, 34, 34) 100%
+      );
     }
 
     &__title {
