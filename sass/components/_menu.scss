@@ -1,163 +1,3 @@
-// .menu {
-//   padding: 5rem 0 5rem;
-//   grid-column: full-start / full-end;
-
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-
-//   .slide {
-//     width: 70vw;
-//     min-height: 80vh;
-
-//     @media (max-width: 56.25em) {
-//       min-height: 90vh;
-//       width: 90vw;
-//     }
-
-//     border-radius: 2rem;
-//     // background: linear-gradient(135deg, rgb(143, 143, 143) 0%, rgb(34, 34, 34) 100%);
-//     background: url('../../img/menu/bg.png');
-//     background-size: cover;
-
-//     opacity: 0;
-
-//     transform: translateX(0%) scale(0.6);
-//     transition: transform 0.8s ease,
-//     opacity 0.8s ease 0.2s;
-
-//     position: absolute;
-
-//     &__content {
-//       position: relative;
-//       width: 100%;
-//       height: 100%;
-//       padding: 2rem;
-//       display: grid;
-//       grid-template-rows: 10rem;
-
-//       &__list {
-//         .item {
-//           display: grid;
-//           gap: 1rem;
-//           grid-template-columns: max-content 1fr 8ch;
-
-//           @media (max-width: 56.25em) {
-//             display: grid;
-//             grid-template-columns: 1fr 8ch;
-//             gap: 0;
-
-//             &__line {
-//               display: none;
-//             }
-
-//             &__price {
-//               justify-self: end;
-//             }
-
-//             // &:not(:last-child) {
-//             //   margin-bottom: 1rem;
-//             // }
-//           }
-//         }
-//       }
-//     }
-
-//     &__bg {
-//       position: absolute;
-//       width: 100%;
-//       height: 100%;
-//       inset: 0;
-//       filter: blur(0.5px) brightness(0.2);
-//       // background-size: contain no-repeat;
-//       // background-size: cover no-repeat;
-//     }
-
-//     &.prev {
-//       transform: translateX(-80%) scale(0.8);
-//       z-index: 2;
-//     }
-
-//     &.curr {
-//       transform: translateX(0%) scale(1);
-//       z-index: 3;
-//       box-shadow: 0 1rem 4rem rgba($color: #000, $alpha: 1);
-//     }
-
-//     &.next {
-//       transform: translateX(80%) scale(0.8);
-//       z-index: 1;
-//     }
-
-//     &.prev,
-//     &.curr,
-//     &.next {
-//       transition: transform 0.8s ease, opacity 0.8s ease 0.2s;
-//       opacity: 1;
-//     }
-
-//     &.prev,
-//     &.next {
-//       cursor: pointer;
-//       filter: blur(1px);
-//     }
-
-//     // &.starter {
-//     //   .slide__bg {
-//     //     background: url('../img/menu/starter.JPG');
-//     //     background-size: cover;
-//     //     background-position: 50% 70%;
-//     //   }
-//     // }
-
-//     // &.desert {
-//     //   .slide__bg {
-//     //     background: url('../img/menu/desert.jpg');
-//     //     background-size: cover;
-//     //     background-position: 50% 60%;
-//     //   }
-//     // }
-
-//     // &.hot {
-//     //   .slide__bg {
-//     //     background: url('../img/menu/hot.webp');
-//     //     background-size: cover;
-//     //     background-position: 50% 45%;
-//     //   }
-//     // }
-
-//     // &.cold {
-//     //   .slide__bg {
-//     //     background: url('../img/menu/cold.JPG');
-//     //     background-size: cover;
-//     //     background-position: 50% 45%;
-//     //   }
-//     // }
-
-//     // &.drinks {
-//     //   .slide__bg {
-//     //     background: url('../img/menu/drinks.webp');
-//     //     background-size: cover;
-//     //     background-position: 50% 65%;
-//     //   }
-//     // }
-//   }
-
-//   &__slider {
-//     height: 100vh;
-//     width: 100%;
-
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     overflow-x: hidden;
-
-//     position: relative;
-//   }
-// }
-
 @keyframes menu-float {
   0% {
     transform: translate(0rem, 0rem);
@@ -192,23 +32,24 @@
 }
 
 .menu {
-  padding: 5rem 0 5rem;
+  // padding: 5rem 0 5rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   grid-column: center-start / center-end;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
 
   &__content {
-    height: 72rem;
+    min-height: 72rem;
     width: 100%;
     position: relative;
   }
 
   &__title {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   &__items {
@@ -288,7 +129,7 @@
   }
 
   &__categories {
-    height: 72rem;
+    min-height: 72rem;
     display: grid;
     gap: 3rem;
     grid-template-columns: repeat(4, 22rem);
@@ -297,14 +138,30 @@
     .category {
       display: flex;
       justify-content: center;
+      align-items: center;
 
       background-size: cover;
       cursor: pointer;
       user-select: none;
       position: relative;
 
+      &__image {
+        width: 20rem;
+        height: 20rem;
+        margin-top: 5rem;
+        // position: absolute;
+        // bottom: 10%;
+      }
+
+      transition: all 0.3s;
+
       &:hover {
-        filter: drop-shadow(0rem 0rem 0.5rem rgba(0, 0, 0, 0.7));
+        filter: drop-shadow(0rem 0rem 0.5rem rgba(0, 0, 0, 0.3));
+        transform: scale(1.1);
+
+        .category__image {
+          animation: menu-float 10s;
+        }
       }
       &__title {
         font-size: 1.5rem;
@@ -423,6 +280,53 @@
           height: 100%;
           background-image: url('../../img/menu/border.png');
           background-size: 100% 100%;
+        }
+      }
+    }
+
+    @media all and (max-width: 56.25em) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: max-content;
+      width: 100%;
+
+      top: unset;
+      left: unset;
+      transform: unset;
+
+      .category {
+        grid-column: unset;
+        grid-row: unset;
+        width: 100%;
+        aspect-ratio: 1/1;
+
+        &__image {
+          width: 8rem;
+          height: 8rem;
+        }
+
+        &--1 {
+          //
+        }
+        &--2 {
+          //
+        }
+        &--3 {
+          //
+        }
+        &--4 {
+          //
+        }
+        &--5 {
+          //
+        }
+        &--6 {
+          //
+        }
+        &--7 {
+          //
+        }
+        &--8 {
+          //
         }
       }
     }
