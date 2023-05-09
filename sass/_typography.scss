@@ -84,14 +84,12 @@ body {
   }
 
   &__desc {
-    &::first-letter {
-      margin-left: 6rem;
-    }
+    // &::first-letter {
+    //   margin-left: 6rem;
+    // }
   }
 
-  // font-size: 2rem;
   font-size: clamp(1rem, 4vw, 2rem);
-  // line-height: normal;
   text-align: justify;
 }
 

@@ -16,10 +16,28 @@
   </head>
 
   <body>
+    <style>
+      .loading-screen {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--color-accent);
+        z-index: 999999;
+        transition: height 0.5s;
+      }
+
+      .loading-screen.hidden {
+        height: 0vh;
+      }
+    </style>
+    <div class="loading-screen"></div>
     <nav class="nav hidden">
       <a href="#" class="nav__logo-box">
         <!-- <img src="img/odnovino.png" alt="" class="nav__logo" /> -->
         <div class="nav__logo"></div>
+        <!-- <img src="img/odnovino.svg" class="nav__logo" alt="" /> -->
       </a>
       <ul class="nav__btn-box">
         <li class="nav__item">
@@ -74,12 +92,13 @@
             <!-- <h1 class="heading-primary--main">Одно вино</h1>
 
           <span class="heading-primary--sub">винный бар города Омска</span> -->
-            <!-- <img src="img/odnovino.png" alt="" class="heading-primary--main" /> -->
-            <div class="heading-primary--main"></div>
+            <img src="img/odnovino.svg" alt="" class="heading-primary--main" />
+            <!-- <use xlink:href="img/odnovino.svg" class="heading-primary--main" /> -->
+            <!-- <div class="heading-primary--main"></div> -->
 
             <a
               href="https://goo.gl/maps/HZUcBebQWx8nJcKW9"
-              class="heading-primary--add"
+              class="heading-primary--add highlight"
               >Ленина 13а
             </a>
           </div>
@@ -107,7 +126,7 @@
             alt=""
             class="about__title--before"
           />
-          Коллектив
+          <span>Коллектив</span>
           <img
             src="img/misc/about-after.png"
             alt=""

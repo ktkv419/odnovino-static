@@ -160,45 +160,45 @@ const foodNames = {
 
   ////////////////////////////////////////////////////////////////////////////////////////////////
 
-  let swipeAnimationRunning = false
+  // let swipeAnimationRunning = false
 
-  let touchstartX = 0
-  let touchendX = 0
+  // let touchstartX = 0
+  // let touchendX = 0
 
-  const swipeMenu = (swipeSlide) => {
-    changeSlide({ target: swipeSlide })
-  }
+  // const swipeMenu = (swipeSlide) => {
+  //   changeSlide({ target: swipeSlide })
+  // }
 
-  function checkDirection() {
-    if (swipeAnimationRunning) return
-    swipeAnimationRunning = true
+  // function checkDirection() {
+  //   if (swipeAnimationRunning) return
+  //   swipeAnimationRunning = true
 
-    let swipeSlide
-    if (touchendX < touchstartX) {
-      swipeSlide = document.querySelector('.slide.next')
-    } else if (touchendX > touchstartX) {
-      swipeSlide = document.querySelector('.slide.prev')
-    }
-    console.log(swipeSlide)
-    swipeMenu(swipeSlide)
-  }
+  //   let swipeSlide
+  //   if (touchendX < touchstartX) {
+  //     swipeSlide = document.querySelector('.slide.next')
+  //   } else if (touchendX > touchstartX) {
+  //     swipeSlide = document.querySelector('.slide.prev')
+  //   }
+  //   console.log(swipeSlide)
+  //   swipeMenu(swipeSlide)
+  // }
 
-  document.body.addEventListener('touchstart', function () {})
+  // document.body.addEventListener('touchstart', function () {})
 
-  document
-    .querySelector('.menu__slider')
-    .addEventListener('touchstart', (e) => {
-      touchstartX = e.changedTouches[0].screenX
-    })
+  // document
+  //   .querySelector('.menu__slider')
+  //   .addEventListener('touchstart', (e) => {
+  //     touchstartX = e.changedTouches[0].screenX
+  //   })
 
-  document.querySelector('.menu__slider').addEventListener('touchend', (e) => {
-    touchendX = e.changedTouches[0].screenX
-    if (
-      Math.abs(touchstartX) - Math.abs(touchendX) > 100 ||
-      Math.abs(touchendX) - Math.abs(touchstartX) > 100
-    )
-      checkDirection()
-  })
+  // document.querySelector('.menu__slider').addEventListener('touchend', (e) => {
+  //   touchendX = e.changedTouches[0].screenX
+  //   if (
+  //     Math.abs(touchstartX) - Math.abs(touchendX) > 100 ||
+  //     Math.abs(touchendX) - Math.abs(touchstartX) > 100
+  //   )
+  //     checkDirection()
+  // })
 })()
 
 /////////////////////////////////////////////////////////////////
@@ -218,6 +218,12 @@ if (window.innerWidth > 900) {
   }
 
   window.addEventListener('scroll', menuHide)
+
+  nav.addEventListener('click', () => {
+    setTimeout(() => {
+      nav.classList.add('hidden')
+    }, 1000)
+  })
 } else {
   document.querySelector('.nav').remove()
   const navCheckbox = document.querySelector('.nav__checkbox')
@@ -232,10 +238,40 @@ if (window.innerWidth > 900) {
     navCheckbox.checked = false
   })
 }
+//
+/////////////////////////////////////////////////////////////////
+//////////////             HEADER           ////////////////////
+///////////////////////////////////////////////////////////////
+const headerAdd = document.querySelector('.heading-primary--add')
+const loadingScreen = document.querySelector('.loading-screen')
+window.onload = () => {
+  loadingScreen.classList.add('hidden')
+  setTimeout(() => {
+    headerAdd.classList.remove('highlight')
+  }, 1000)
+}
 
 ///////////////////////////////////////////////////////////////
 //////////////             ABOUT           ////////////////////
 ///////////////////////////////////////////////////////////////
+
+const wiggle = (element) => {
+  element.style.transition = `transform 2s ease-in-out`
+  const delay = Math.trunc(Math.random() * 9) * 100
+  setTimeout(() => {
+    setInterval(() => {
+      const x = Math.trunc(Math.random() * 10) - 5
+      const y = Math.trunc(Math.random() * 10) - 5
+      element.style.transform = `translate(${x}px, ${y}px)`
+      // setTimeout(() => {
+      //   element.style.transform = `translate(${0}px, ${0}px)`
+      // }, 1000)
+    }, 1000)
+  }, delay)
+}
+const dividers = [...document.querySelectorAll('.motto__divider')]
+dividers.forEach((el) => wiggle(el))
+
 class About {
   constructor() {
     this.slider = document.querySelector('.about__slider')

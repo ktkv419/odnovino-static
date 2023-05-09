@@ -1,0 +1,51 @@
+$section-gap-small: 5rem;
+$section-gap: 10rem;
+$section-gap-big: 20rem;
+
+@mixin section-gap-small($type: margin, $direction: top) {
+  @if $type == margin {
+    @if $direction == bottom {
+      margin-bottom: $section-gap-small;
+    } @else if $direction == top {
+      margin-top: $section-gap-small;
+    }
+  } @else if $type == padding {
+    @if $direction == bottom {
+      padding-bottom: $section-gap-small;
+    } @else if $direction == top {
+      padding-top: $section-gap-small;
+    }
+  }
+}
+
+@mixin section-gap($type: margin, $direction: top) {
+  @if $type == margin {
+    @if $direction == bottom {
+      margin-bottom: $section-gap;
+    } @else if $direction == top {
+      margin-top: $section-gap;
+    }
+  } @else if $type == padding {
+    @if $direction == bottom {
+      padding-bottom: $section-gap;
+    } @else if $direction == top {
+      padding-top: $section-gap;
+    }
+  }
+}
+
+@mixin section-gap-big($type: margin, $direction: top) {
+  @if $type == margin {
+    @if $direction == bottom {
+      margin-bottom: $section-gap-big;
+    } @else if $direction == top {
+      margin-top: $section-gap-big;
+    }
+  } @else if $type == padding {
+    @if $direction == bottom {
+      padding-bottom: $section-gap-big;
+    } @else if $direction == top {
+      padding-top: $section-gap-big;
+    }
+  }
+}

@@ -19,7 +19,8 @@
 .motto {
   grid-column: center-start / center-end;
 
-  padding: 5rem 0;
+  // padding: 5rem 0;
+  @include section-gap(margin);
 
   display: flex;
   flex-direction: column;
@@ -32,15 +33,14 @@
 
   &__text {
     width: 50vw;
-    padding: 2rem 0;
 
-    .divider--1 {
-      animation: floating 6s infinite ease-in-out;
-    }
+    // .divider--1 {
+    //   animation: floating 6s infinite ease-in-out;
+    // }
 
-    .divider--2 {
-      animation: floating 6s infinite 1s ease-in-out;
-    }
+    // .divider--2 {
+    //   animation: floating 6s infinite 1s ease-in-out;
+    // }
 
     @media all and (max-width: 56.25em) {
       width: 90vw;
