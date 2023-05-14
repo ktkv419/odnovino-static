@@ -243,9 +243,9 @@ if (window.innerWidth > 900) {
 //////////////             HEADER           ////////////////////
 ///////////////////////////////////////////////////////////////
 const headerAdd = document.querySelector('.heading-primary--add')
-const loadingScreen = document.querySelector('.loading-screen')
+// const loadingScreen = document.querySelector('.loading-screen')
 window.onload = () => {
-  loadingScreen.classList.add('hidden')
+  // loadingScreen.classList.add('hidden')
   setTimeout(() => {
     headerAdd.classList.remove('highlight')
   }, 1000)
