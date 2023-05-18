@@ -377,16 +377,36 @@ const events = new Events()
 //////////////////////////////////////////////////
 ////////////// FORM /////////////////////////////
 ////////////////////////////////////////////////
+//
 const form = document.querySelector('#form')
+const formCheckbox = document.querySelector('.form__checkbox')
+const formSubmitBtn = document.querySelector('.form__submit')
+const formCloseBtn = document.querySelector('.form__close')
+const formFields = form.querySelectorAll('input')
 
 const sendForm = (e) => {
   e.preventDefault()
+
   const data = {}
   new FormData(e.target).forEach((value, key) => {
     data[key] = value
   })
-  console.log(data)
+
+  formCheckbox.checked = false
+
+  setTimeout(() => {
+    Array.from(formFields).forEach((field) => (field.value = ''))
+  }, 1000)
+
+  // console.log(data)
 }
+
+const closeForm = (e) => {
+  e.preventDefault()
+  formCheckbox.checked = false
+}
+
+formCloseBtn.addEventListener('click', closeForm)
 
 form.addEventListener('submit', sendForm)
 

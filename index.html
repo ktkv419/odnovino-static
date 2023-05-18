@@ -84,57 +84,6 @@
         </li>
       </ul>
     </nav>
-    <div id="form" class="form">
-      <div class="form__content">
-        <a href="">Back</a>
-        <p class="form__desc">Оставьте контактные данные для приглашения</p>
-        <form
-          action=""
-          method="post"
-          id="invite-form"
-          autocomplete="off"
-          class="form__fields"
-        >
-          <div class="form__item">
-            <input
-              type="text"
-              class="form__name"
-              id="name"
-              name="name"
-              placeholder="Имя"
-              required
-            />
-            <!-- <label for="name" class="form__label">Имя</label> -->
-          </div>
-          <div class="form__item">
-            <input
-              type="email"
-              class="form__email"
-              name="email"
-              type="email"
-              id="email"
-              placeholder="Почта"
-              required
-            />
-            <!-- <label for="email" class="form__label">Почта</label> -->
-          </div>
-          <div class="form__item">
-            <input
-              type="tel"
-              class="form__tel"
-              name="tel"
-              id="tel"
-              type="number"
-              placeholder="Телефон"
-              required
-            />
-            <!-- <label for="tel" class="form__label">Телефон</label> -->
-          </div>
-          <button type="submit" form="form">Отправить</button>
-        </form>
-        <!-- <img src="img/events/back.jpg" alt="" class="form__image" /> -->
-      </div>
-    </div>
     <div class="container">
       <section class="header">
         <div class="header__mask">
@@ -392,7 +341,61 @@
             </div>
           </div>
         </div>
-        <input type="checkbox" class="form__checkbox" />
+        <label for="form__checkbox" class="form__label">Оставить заявку</label>
+        <input type="checkbox" id="form__checkbox" class="form__checkbox" />
+        <div id="form" class="form">
+          <div class="form__content">
+            <a class="form__close" href=""></a>
+            <p class="form__desc">Оставьте контактные данные для приглашения</p>
+            <form
+              action=""
+              method="post"
+              id="invite-form"
+              autocomplete="off"
+              class="form__fields"
+            >
+              <div class="form__item">
+                <input
+                  type="text"
+                  class="form__name"
+                  id="name"
+                  name="name"
+                  placeholder="Имя"
+                  required
+                />
+                <!-- <label for="name" class="form__label">Имя</label> -->
+              </div>
+              <div class="form__item">
+                <input
+                  type="email"
+                  class="form__email"
+                  name="email"
+                  type="email"
+                  id="email"
+                  placeholder="Почта"
+                  required
+                />
+                <!-- <label for="email" class="form__label">Почта</label> -->
+              </div>
+              <div class="form__item">
+                <input
+                  type="tel"
+                  class="form__tel"
+                  name="tel"
+                  id="tel"
+                  type="number"
+                  placeholder="Телефон"
+                  required
+                />
+                <!-- <label for="tel" class="form__label">Телефон</label> -->
+              </div>
+            </form>
+            <button class="form__submit" type="submit" form="invite-form">
+              Отправить
+            </button>
+            <!-- <img src="img/events/back.jpg" alt="" class="form__image" /> -->
+          </div>
+        </div>
       </section>
       <!-- <div class="footer__placeholder" id="footer"></div> -->
       <footer class="footer" id="footer">
