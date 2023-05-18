@@ -374,6 +374,22 @@ class Events {
 
 const events = new Events()
 
+//////////////////////////////////////////////////
+////////////// FORM /////////////////////////////
+////////////////////////////////////////////////
+const form = document.querySelector('#form')
+
+const sendForm = (e) => {
+  e.preventDefault()
+  const data = {}
+  new FormData(e.target).forEach((value, key) => {
+    data[key] = value
+  })
+  console.log(data)
+}
+
+form.addEventListener('submit', sendForm)
+
 ////////////////////////////////////// EXPERIMENTAL
 // const body = document.body,
 //   html = document.documentElement

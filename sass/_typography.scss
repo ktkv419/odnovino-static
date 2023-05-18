@@ -246,6 +246,18 @@ body {
   }
 }
 
+.form {
+  &__title {
+    font-size: 6rem;
+    font-weight: bold;
+    position: relative;
+  }
+
+  &__desc {
+    font-size: 2rem;
+  }
+}
+
 .footer {
   .widget {
     &--title {
